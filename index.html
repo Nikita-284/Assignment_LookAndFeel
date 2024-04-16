@@ -49,17 +49,33 @@
     }
 
     /* Right side images */
-    .circle-images {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center; /* Align items vertically */
+    .triangle-container {
+      position: relative;
+      width: 150px; /* Adjust width of the container */
+      height: 150px; /* Adjust height of the container */
     }
-    .circle-image {
+
+    .triangle-image {
+      position: absolute;
       width: 80px; /* Adjust image size as needed */
       height: 80px; /* Adjust image size as needed */
       border-radius: 50%; /* Make the image circular */
-      margin-left: 10px; /* Adjust spacing between images */
       border: 2px solid white; /* Add border to images */
+    }
+
+    .top {
+      top: 0;
+      left: 35%; /* Adjust left position for top image */
+    }
+
+    .left {
+      top: 80px; /* Adjust top position for left image */
+      left: 0;
+    }
+
+    .right {
+      top: 80px; /* Adjust top position for right image */
+      right: 0;
     }
   </style>
 </head>
@@ -102,10 +118,10 @@
 
         <!-- Right side images -->
         <div class="col s12 m6">
-          <div class="circle-images">
-            <img src="image1.jpg" alt="Image 1" class="circle-image">
-            <img src="image2.jpg" alt="Image 2" class="circle-image">
-            <img src="image3.jpg" alt="Image 3" class="circle-image">
+          <div class="triangle-container">
+            <img src="img/banner_img1.jpeg" alt="Image 1" class="triangle-image top">
+            <img src="img/banner_img2.png" alt="Image 2" class="triangle-image left">
+            <img src="img/banner_img3.png" alt="Image 3" class="triangle-image right">
             <!-- Add more images as needed -->
           </div>
         </div>
@@ -125,3 +141,10 @@
       var navToggle = document.querySelector('.sidenav-trigger');
       if (window.innerWidth < 992) {
         navToggle.innerHTML = '<i class="material-icons">menu</i>';
+      } else {
+        navToggle.innerHTML = '<i class="material-icons">menu</i>';
+      }
+    });
+  </script>
+</body>
+</html>
