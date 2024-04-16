@@ -9,13 +9,17 @@
   <style>
     /* Internal CSS */
     nav {
-      background-color: #7e57c2; /* Purple color */
+      background-color: #786ce9; /* New shade */
+      padding: 0 10px; /* Add padding to align the logo properly */
     }
     /* Centering the logo */
+    .brand-logo {
+      display: flex;
+      align-items: center;
+    }
     .brand-logo img {
-      height: 100%;
-      display: inline-block;
-      vertical-align: middle;
+      max-height: 64px; /* Limit the height of the logo */
+      max-width: auto; /* Ensure the logo scales properly */
     }
   </style>
 </head>
@@ -23,8 +27,12 @@
   <!-- Navigation Bar -->
   <nav>
     <div class="nav-wrapper">
-      <!-- Replaced "Logo" with "Fit.co" and added logo image -->
-      <a href="#" class="brand-logo"><img src="img/logo.png" alt="Fit.co"></a>
+      <!-- Removed the logo text -->
+      <!-- Added the logo image -->
+      <a href="#" class="brand-logo">
+        <img src="img/logo2.png" alt="Fit.co Logo">
+      </a>
+      <!-- End of logo area -->
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Home</a></li>
