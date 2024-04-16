@@ -40,27 +40,34 @@
             margin-bottom: 20px; /* Add margin at the bottom */
         }
 
-        .banner-button {
-            background-color: #786ce9; /* Button color */
-            color: white; /* Text color */
-            padding: 10px 20px; /* Padding for button */
-            text-decoration: none; /* Remove underline */
-            border-radius: 5px; /* Rounded corners */
-            transition: background-color 0.3s; /* Smooth transition on hover */
-        }
-
-            .banner-button:hover {
-                background-color: #5c4ad8; /* Darker color on hover */
-            }
-
         /* Main content */
         .about-content {
             padding: 50px 20px; /* Add padding for content */
         }
 
-        .about-text {
-            font-size: 1.2rem; /* Font size for text */
-            line-height: 1.6; /* Line height for readability */
+        .member-box {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .member-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .member-description {
+            color: #666;
+            line-height: 1.5;
         }
     </style>
 </head>
@@ -107,9 +114,33 @@
     <div class="about-content">
         <div class="container">
             <div class="row">
-                <div class="col s12">
-                    <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero et justo tempus, non vehicula velit dignissim. Integer vehicula leo ut ante eleifend, eget volutpat libero tincidunt. Sed sed justo vel arcu congue accumsan. Morbi et tellus vel urna pharetra vehicula. Curabitur id eleifend nunc, at blandit mi. Proin suscipit, arcu nec molestie sodales, sem neque dictum elit, nec cursus magna nisi ac lacus. Ut imperdiet blandit enim, a facilisis nisi mollis in. Suspendisse potenti. In non velit scelerisque, posuere urna nec, volutpat metus. Aliquam in turpis non odio interdum condimentum sit amet sit amet libero.</p>
-                    <p class="about-text">Vestibulum consequat, tortor at dictum vehicula, sem lorem laoreet lorem, non feugiat ex nibh non elit. Aliquam hendrerit tristique libero, in facilisis lacus eleifend et. In dapibus felis vel sapien placerat placerat. Fusce ultricies mi nec tellus varius, id rhoncus nisi bibendum. Curabitur tincidunt, ligula quis accumsan consectetur, libero ligula tincidunt lorem, ac lacinia libero purus sit amet eros. Sed et maximus tortor, eget euismod libero. Vestibulum vel volutpat neque. Fusce pulvinar magna nec eros scelerisque, eu volutpat ex tempus. Nam varius lorem sed ultrices aliquam. Vivamus eleifend rhoncus ligula, nec malesuada lacus dapibus at. Vestibulum condimentum volutpat risus in fermentum. Nulla vestibulum odio at libero pharetra commodo. Fusce a ante suscipit, aliquet dolor at, dictum eros. Aenean euismod justo ut massa tincidunt, eget consequat arcu vestibulum.</p>
+                <div class="col s12 m6">
+                    <div class="member-box">
+                        <h3 class="member-name">Nikita Gill</h3>
+                        <img src="https://raw.githubusercontent.com/Nikita-284/Assignment_LookAndFeel/master/img/pic.jpg" alt="Member 1" class="member-img">
+                        <p class="member-description">John is a passionate developer with a strong background in web development. He loves to create beautiful and functional websites that make a difference.</p>
+                    </div>
+                </div>
+                <div class="col s12 m6">
+                    <div class="member-box">
+                        <h3 class="member-name">Rishabh Singh</h3>
+                        <img src="https://raw.githubusercontent.com/Nikita-284/Assignment_LookAndFeel/master/img/pic.jpg" alt="Member 2" class="member-img">
+                        <p class="member-description">Jane is a creative designer who specializes in user experience and interface design. She enjoys solving complex design challenges and bringing ideas to life.</p>
+                    </div>
+                </div>
+                <div class="col s12 m6">
+                    <div class="member-box">
+                        <h3 class="member-name">Gayatri Moham</h3>
+                        <img src="https://raw.githubusercontent.com/Nikita-284/Assignment_LookAndFeel/master/img/pic.jpg" alt="Member 3" class="member-img">
+                        <p class="member-description">Michael is a skilled marketer with a knack for understanding consumer behavior. He excels in creating effective marketing strategies that drive results.</p>
+                    </div>
+                </div>
+                <div class="col s12 m6">
+                    <div class="member-box">
+                        <h3 class="member-name">Atharava Sripaad</h3>
+                        <img src="https://raw.githubusercontent.com/Nikita-284/Assignment_LookAndFeel/master/img/pic.jpg" alt="Member 4" class="member-img">
+                        <p class="member-description">Emily is a detail-oriented project manager who ensures that projects are delivered on time and within budget. She thrives in fast-paced environments and loves a good challenge.</p>
+                    </div>
                 </div>
             </div>
         </div>
