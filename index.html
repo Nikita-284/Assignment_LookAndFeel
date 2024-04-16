@@ -21,6 +21,33 @@
       max-height: 64px; /* Limit the height of the logo */
       max-width: auto; /* Ensure the logo scales properly */
     }
+
+    /* Banner styles */
+    .banner {
+      background-color: #a99df2; /* New color shade for the banner */
+      padding: 100px 20px; /* Adjust padding as needed */
+      color: white; /* Text color */
+      text-align: center; /* Center align text */
+    }
+    .banner-text {
+      font-size: 2rem; /* Font size for main heading */
+      font-weight: bold; /* Bold font for emphasis */
+    }
+    .banner-description {
+      font-size: 1.2rem; /* Font size for description */
+      margin-bottom: 20px; /* Add margin at the bottom */
+    }
+    .banner-button {
+      background-color: #786ce9; /* Button color */
+      color: white; /* Text color */
+      padding: 10px 20px; /* Padding for button */
+      text-decoration: none; /* Remove underline */
+      border-radius: 5px; /* Rounded corners */
+      transition: background-color 0.3s; /* Smooth transition on hover */
+    }
+    .banner-button:hover {
+      background-color: #5c4ad8; /* Darker color on hover */
+    }
   </style>
 </head>
 <body>
@@ -48,6 +75,15 @@
     <li><a href="#">FitMe</a></li>
     <li><a href="#">AboutUs</a></li>
   </ul>
+
+  <!-- Banner -->
+  <div class="banner">
+    <div class="container">
+      <h2 class="banner-text">Feel Great.</h2>
+      <p class="banner-description">Body and Mind. Choose from hundreds of workouts, healthy recipes, relaxing meditations, and expert articles, for a whole body and mind approach to feeling great.</p>
+      <a href="#" class="banner-button">Join now</a>
+    </div>
+  </div>
 
   <!-- JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
