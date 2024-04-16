@@ -25,9 +25,8 @@
     /* Banner styles */
     .banner {
       background-color: #a99df2; /* New color shade for the banner */
-      padding: 100px 20px; /* Adjust padding as needed */
+      padding: 100px 20px; /* Increase padding for larger size */
       color: white; /* Text color */
-      text-align: center; /* Center align text */
     }
     .banner-text {
       font-size: 2rem; /* Font size for main heading */
@@ -47,6 +46,20 @@
     }
     .banner-button:hover {
       background-color: #5c4ad8; /* Darker color on hover */
+    }
+
+    /* Right side images */
+    .circle-images {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center; /* Align items vertically */
+    }
+    .circle-image {
+      width: 80px; /* Adjust image size as needed */
+      height: 80px; /* Adjust image size as needed */
+      border-radius: 50%; /* Make the image circular */
+      margin-left: 10px; /* Adjust spacing between images */
+      border: 2px solid white; /* Add border to images */
     }
   </style>
 </head>
@@ -79,9 +92,24 @@
   <!-- Banner -->
   <div class="banner">
     <div class="container">
-      <h2 class="banner-text">Feel Great.</h2>
-      <p class="banner-description">Body and Mind. Choose from hundreds of workouts, healthy recipes, relaxing meditations, and expert articles, for a whole body and mind approach to feeling great.</p>
-      <a href="#" class="banner-button">Join now</a>
+      <div class="row">
+        <!-- Left side text -->
+        <div class="col s12 m6">
+          <h2 class="banner-text">Feel Great.</h2>
+          <p class="banner-description">Body and Mind. Choose from hundreds of workouts, healthy recipes, relaxing meditations, and expert articles, for a whole body and mind approach to feeling great.</p>
+          <a href="#" class="banner-button">Join now</a>
+        </div>
+
+        <!-- Right side images -->
+        <div class="col s12 m6">
+          <div class="circle-images">
+            <img src="image1.jpg" alt="Image 1" class="circle-image">
+            <img src="image2.jpg" alt="Image 2" class="circle-image">
+            <img src="image3.jpg" alt="Image 3" class="circle-image">
+            <!-- Add more images as needed -->
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -97,10 +125,3 @@
       var navToggle = document.querySelector('.sidenav-trigger');
       if (window.innerWidth < 992) {
         navToggle.innerHTML = '<i class="material-icons">menu</i>';
-      } else {
-        navToggle.innerHTML = '<i class="material-icons">menu</i>';
-      }
-    });
-  </script>
-</body>
-</html>
