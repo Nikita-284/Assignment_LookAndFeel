@@ -51,31 +51,38 @@
     /* Right side images */
     .triangle-container {
       position: relative;
-      width: 150px; /* Adjust width of the container */
-      height: 150px; /* Adjust height of the container */
+      width: 300px; /* Adjust width of the container */
+      height: 300px; /* Adjust height of the container */
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .triangle-image {
-      position: absolute;
-      width: 80px; /* Adjust image size as needed */
-      height: 80px; /* Adjust image size as needed */
+      width: 120px; /* Adjust image size as needed */
+      height: 120px; /* Adjust image size as needed */
       border-radius: 50%; /* Make the image circular */
       border: 2px solid white; /* Add border to images */
+      position: absolute;
     }
 
     .top {
       top: 0;
-      left: 35%; /* Adjust left position for top image */
     }
 
     .left {
-      top: 80px; /* Adjust top position for left image */
-      left: 0;
+      top: 100px; /* Adjust top position for left image */
+      left: -40px; /* Adjust left position for left image */
     }
 
     .right {
-      top: 80px; /* Adjust top position for right image */
-      right: 0;
+      top: 100px; /* Adjust top position for right image */
+      right: -80px; /* Adjust right position for right image */
+    }
+
+    .bottom {
+    bottom: -40px; /* Adjust bottom position for bottom image */
+    left: 100px; /* Adjust left position for bottom image */
     }
   </style>
 </head>
@@ -122,6 +129,7 @@
             <img src="img/banner_img1.jpeg" alt="Image 1" class="triangle-image top">
             <img src="img/banner_img2.png" alt="Image 2" class="triangle-image left">
             <img src="img/banner_img3.png" alt="Image 3" class="triangle-image right">
+            <img src="img/banner_img2.png" alt="Image 3" class="triangle-image bottom   ">
             <!-- Add more images as needed -->
           </div>
         </div>
