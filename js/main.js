@@ -1,3 +1,0 @@
-/**
- * Your JS code here
- */
