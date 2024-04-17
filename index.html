@@ -1,388 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Website</title>
-  <!-- Materialize CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <style>
-    /* Internal CSS */
-    nav {
-      background-color: #786ce9; /* New shade */
-      padding: 0 10px; /* Add padding to align the logo properly */
-    }
-    /* Centering the logo */
-    .brand-logo {
-      display: flex;
-      align-items: center;
-    }
-    .brand-logo img {
-      max-height: 64px; /* Limit the height of the logo */
-      max-width: auto; /* Ensure the logo scales properly */
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        /* Internal CSS */
+        nav {
+            background-color: #786ce9; /* New shade */
+            padding: 0 10px; /* Add padding to align the logo properly */
+        }
+        /* Centering the logo */
+        .brand-logo {
+            display: flex;
+            align-items: center;
+        }
 
-    /* Banner styles */
-    .banner {
-      background-color: #a99df2; /* New color shade for the banner */
-      padding: 100px 20px; /* Increase padding for larger size */
-      color: white; /* Text color */
-    }
-    .banner-text {
-      font-size: 2rem; /* Font size for main heading */
-      font-weight: bold; /* Bold font for emphasis */
-    }
-    .banner-description {
-      font-size: 1.2rem; /* Font size for description */
-      margin-bottom: 20px; /* Add margin at the bottom */
-    }
-    .banner-button {
-      background-color: #786ce9; /* Button color */
-      color: white; /* Text color */
-      padding: 10px 20px; /* Padding for button */
-      text-decoration: none; /* Remove underline */
-      border-radius: 5px; /* Rounded corners */
-      transition: background-color 0.3s; /* Smooth transition on hover */
-    }
-    .banner-button:hover {
-      background-color: #5c4ad8; /* Darker color on hover */
-    }
+            .brand-logo img {
+                max-height: 64px; /* Limit the height of the logo */
+                max-width: auto; /* Ensure the logo scales properly */
+            }
 
-    /* Right side images */
-    .triangle-container {
-      position: relative;
-      width: 300px; /* Adjust width of the container */
-      height: 300px; /* Adjust height of the container */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+        /* Banner styles */
+        .banner {
+            background-color: #a99df2; /* New color shade for the banner */
+            padding: 100px 20px; /* Increase padding for larger size */
+            color: white; /* Text color */
+        }
 
-    .triangle-image {
-      width: 120px; /* Adjust image size as needed */
-      height: 120px; /* Adjust image size as needed */
-      border-radius: 50%; /* Make the image circular */
-      border: 2px solid white; /* Add border to images */
-      position: absolute;
-    }
+        .banner-text {
+            font-size: 2rem; /* Font size for main heading */
+            font-weight: bold; /* Bold font for emphasis */
+        }
 
-    .top {
-      top: 0;
-    }
+        .banner-description {
+            font-size: 1.2rem; /* Font size for description */
+            margin-bottom: 20px; /* Add margin at the bottom */
+        }
 
-    .left {
-      top: 100px; /* Adjust top position for left image */
-      left: -40px; /* Adjust left position for left image */
-    }
+        .banner-button {
+            background-color: #786ce9; /* Button color */
+            color: white; /* Text color */
+            padding: 10px 20px; /* Padding for button */
+            text-decoration: none; /* Remove underline */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s; /* Smooth transition on hover */
+        }
 
-    .right {
-      top: 100px; /* Adjust top position for right image */
-      right: -80px; /* Adjust right position for right image */
-    }
+            .banner-button:hover {
+                background-color: #5c4ad8; /* Darker color on hover */
+            }
 
-    .bottom {
-    bottom: -40px; /* Adjust bottom position for bottom image */
-    left: 100px; /* Adjust left position for bottom image */
-    }
+        /* Right side images */
+        .triangle-container {
+            position: relative;
+            width: 300px; /* Adjust width of the container */
+            height: 300px; /* Adjust height of the container */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    /* Pricing Table Styles */
-    .pricing-table {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: 50px auto;
-      width: 80%;
-    }
+        .triangle-image {
+            width: 120px; /* Adjust image size as needed */
+            height: 120px; /* Adjust image size as needed */
+            border-radius: 50%; /* Make the image circular */
+            border: 2px solid white; /* Add border to images */
+            position: absolute;
+        }
 
-    .pricing-table .plan {
-      background-color: #f2f2f2;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      padding: 20px;
-      text-align: center;
-      margin: 10px;
-      width: 25%;
-    }
+        .top {
+            top: 0;
+        }
 
-    .pricing-table .plan h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
+        .left {
+            top: 100px; /* Adjust top position for left image */
+            left: -40px; /* Adjust left position for left image */
+        }
 
-    .pricing-table .plan p {
-      font-size: 16px;
-      line-height: 1.5;
-    }
+        .right {
+            top: 100px; /* Adjust top position for right image */
+            right: -80px; /* Adjust right position for right image */
+        }
 
-    .pricing-table .plan .price {
-      font-size: 28px;
-      color: #333;
-      margin-bottom: 10px;
-    }
+        .bottom {
+            bottom: -40px; /* Adjust bottom position for bottom image */
+            left: 100px; /* Adjust left position for bottom image */
+        }
 
-    .pricing-table .plan .button {
-      background-color: #007bff;
-      border: none;
-      color: white;
-      padding: 10px 20px;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+        /* Pricing Table Styles */
+        .pricing-table {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 50px auto;
+            width: 80%;
+        }
 
-    .pricing-table .plan.featured {
-      background-color: #ddd;
-      border-color: #999;
-    }
-  </style>
+            .pricing-table .plan {
+                background-color: #f2f2f2;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 20px;
+                text-align: center;
+                margin: 10px;
+                width: 25%;
+            }
+
+                .pricing-table .plan h3 {
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                }
+
+                .pricing-table .plan p {
+                    font-size: 16px;
+                    line-height: 1.5;
+                }
+
+                .pricing-table .plan .price {
+                    font-size: 28px;
+                    color: #333;
+                    margin-bottom: 10px;
+                }
+
+                .pricing-table .plan .button {
+                    background-color: #007bff;
+                    border: none;
+                    color: white;
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                .pricing-table .plan.featured {
+                    background-color: #ddd;
+                    border-color: #999;
+                }
+
+        /* Service Section Styles */
+        /* Service Section Styles */
+.service-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.service-text {
+    flex: 1;
+    padding: 0 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.service-text:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-image {
+    width: 40%; /* Adjust image width */
+}
+
+.service-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+
+        h3 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .service-container {
+                flex-direction: column;
+            }
+
+            .service-text,
+            .service-image {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .service-text {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
 <body>
-  <!-- Navigation Bar -->
-  <nav>
-    <div class="nav-wrapper">
-      <!-- Removed the logo text -->
-      <!-- Added the logo image -->
-      <a href="#" class="brand-logo">
-        <img src="img/logo2.png" alt="Fit.co Logo">
-      </a>
-      <!-- End of logo area -->
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-wrapper">
+            <!-- Removed the logo text -->
+            <!-- Added the logo image -->
+            <a href="#" class="brand-logo">
+                <img src="img/logo2.png" alt="Fit.co Logo">
+            </a>
+            <!-- End of logo area -->
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">FitMe</a></li>
+                <li><a href="#">AboutUs</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Side Navigation (Mobile) -->
+    <ul class="sidenav" id="mobile-demo">
         <li><a href="#">Home</a></li>
         <li><a href="#">FitMe</a></li>
         <li><a href="#">AboutUs</a></li>
-      </ul>
-    </div>
-  </nav>
+    </ul>
 
-  <!-- Side Navigation (Mobile) -->
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">FitMe</a></li>
-    <li><a href="#">AboutUs</a></li>
-  </ul>
+    <!-- Banner -->
+    <div class="banner">
+        <div class="container">
+            <div class="row">
+                <!-- Left side text -->
+                <div class="col s12 m6">
+                    <h2 class="banner-text">Feel Great.</h2>
+                    <p class="banner-description">Body and Mind. Choose from hundreds of workouts, healthy recipes, relaxing meditations, and expert articles, for a whole body and mind approach to feeling great.</p>
+                    <a href="#" class="banner-button">Join now</a>
+                </div>
 
-  <!-- Banner -->
-  <div class="banner">
-    <div class="container">
-      <div class="row">
-        <!-- Left side text -->
-        <div class="col s12 m6">
-          <h2 class="banner-text">Feel Great.</h2>
-          <p class="banner-description">Body and Mind. Choose from hundreds of workouts, healthy recipes, relaxing meditations, and expert articles, for a whole body and mind approach to feeling great.</p>
-          <a href="#" class="banner-button">Join now</a>
+                <!-- Right side images -->
+                <div class="col s12 m6">
+                    <div class="triangle-container">
+                        <img src="img/banner_img1.jpeg" alt="Image 1" class="triangle-image top">
+                        <img src="img/banner_img2.png" alt="Image 2" class="triangle-image left">
+                        <img src="img/banner_img3.png" alt="Image 3" class="triangle-image right">
+                        <img src="img/banner_img2.png" alt="Image 3" class="triangle-image bottom">
+                        <!-- Add more images as needed -->
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- Right side images -->
-        <div class="col s12 m6">
-          <div class="triangle-container">
-            <img src="img/banner_img1.jpeg" alt="Image 1" class="triangle-image top">
-            <img src="img/banner_img2.png" alt="Image 2" class="triangle-image left">
-            <img src="img/banner_img3.png" alt="Image 3" class="triangle-image right">
-            <img src="img/banner_img2.png" alt="Image 3" class="triangle-image bottom   ">
-            <!-- Add more images as needed -->
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
+
+    <!-- Service Section -->
+    <div style="background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);">
+        <div class="container">
+            <h2 style="padding-top: 40px;">Our Services</h2>
+            <div class="service-container">
+                <div class="service-text">
+                    <h3>Personalized Workouts</h3>
+                    <p>Get tailored workouts designed to fit your lifestyle and goals.</p>
+                </div>
+                <div class="service-image">
+                    <img src="img/services_1.png" alt="Person lifting weights">
+                </div>
+            </div>
+            <div class="service-container">
+                <div class="service-image">
+                    <img src="img/services_3.jpeg" alt="Healthy meal on a plate">
+                </div>
+                <div class="service-text">
+                    <h3>Customized Meal Plans</h3>
+                    <p>Receive nutrition plans crafted to fuel your fitness journey.</p>
+                </div>
+            </div>
+            <div class="service-container">
+                <div class="service-text">
+                    <h3>Comprehensive Fitness Plans</h3>
+                    <p>Unlock your full potential with structured fitness programs.</p>
+                </div>
+                <div class="service-image">
+                    <img src="img/services_1.png" alt="Person running outdoors">
+                </div>
+            </div>
+            <div class="service-container">
+                <div class="service-image">
+                    <img src="img/services_4.jpeg" alt="Person meditating in nature">
+                </div>
+                <div class="service-text">
+                    <h3>Just Yoga</h3>
+                    <p>Find inner balance and flexibility with our yoga sessions.</p>
+                </div>
+            </div>
+            <div class="service-container">
+                <div class="service-text">
+                    <h3>Mindfulness Tips</h3>
+                    <p>Discover techniques for an active body and a calm mind.</p>
+                </div>
+                <div class="service-image">
+                    <img src="img/services_5.png" alt="Person practicing mindfulness">
+                </div>
+            </div>
+            <div class="service-container">
+                <div class="service-image">
+                    <img src="img/services_6.png" alt="Personal trainer assisting a client">
+                </div>
+                <div class="service-text">
+                    <h3>Personal Training Coaches</h3>
+                    <p>Work with expert coaches for personalized guidance and motivation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Pricing Section -->
-  <section class="pricing-table">
-    <div class="plan" style="border-radius: 10%;">
-      <h3>Unlimited Member</h3>
-      <p class="price">$159</p>
-      <p>Every month</p>
-      <p>Unlimited Plan walls a months notice to cancel</p>
-      <button class="button">LET'S DO IT</button>
-    </div>
-    <div class="plan featured" style="border-radius: 10%;">
-      <h3>Gold Membership</h3>
-      <p class="price">$89.99</p>
-      <p>Every month</p>
-      <p>Classes a Month, Gym access, Fitness assesment, Locker room with showers</p>
-      <button class="button">SET BOOK</button>
-    </div>
-    <div class="plan" style="border-radius: 10%;">
-      <h3>Single Class Pass</h3>
-      <p class="price">$20</p>
-      <p>1 single session class</p>
-      <button class="button">LET'S DO IT</button>
-    </div>
-  </section>
+    <section class="pricing-table">
+        <div class="plan" style="border-radius: 10%;">
+            <h3>Unlimited Member</h3>
+            <p class="price">$159</p>
+            <p>Every month</p>
+            <p>Unlimited Plan walls a months notice to cancel</p>
+            <button class="button">LET'S DO IT</button>
+        </div>
+        <div class="plan featured" style="border-radius: 10%;">
+            <h3>Gold Membership</h3>
+            <p class="price">$89.99</p>
+            <p>Every month</p>
+            <p>Classes a Month, Gym access, Fitness assesment, Locker room with showers</p>
+            <button class="button">SET BOOK</button>
+        </div>
+        <div class="plan" style="border-radius: 10%;">
+            <h3>Single Class Pass</h3>
+            <p class="price">$20</p>
+            <p>1 single session class</p>
+            <button class="button">LET'S DO IT</button>
+        </div>
+    </section>
 
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        // Initialize Materialize components
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
 
-  <style>
-    /* Internal CSS for Services We Offer section */
-    .service-container {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 30px;
-    }
-  
-    .service-text {
-      flex: 0 0 50%;
-      text-align: left;
-    }
-  
-    .service-text h3 {
-      font-weight: bold;
-    }
-  
-    .service-image {
-      flex: 0 0 40%;
-    }
-  
-    .service-image img {
-      max-width: 100%;
-      border-radius: 5px;
-    }
-
-    /* General Styles */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      padding: 40px 20px;
-      background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    h2 {
-      text-align: center;
-      font-size: 36px;
-      margin-bottom: 40px;
-      color: #333;
-    }
-    .service-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 40px;
-    }
-    .service-text {
-      flex: 1;
-      padding: 0 20px;
-      background-color: #f9f9f9;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: box-shadow 0.3s ease;
-    }
-    .service-text:hover {
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-    .service-image img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
-    h3 {
-      font-size: 24px;
-      color: #333;
-    }
-    p {
-      font-size: 18px;
-      color: #666;
-      margin-top: 10px;
-    }
-
-    /* Media Queries */
-    @media (max-width: 768px) {
-      .service-container {
-        flex-direction: column;
-      }
-      .service-text,
-      .service-image {
-        width: 100%;
-        margin-bottom: 20px;
-      }
-      .service-text {
-        padding: 20px;
-      }
-    }
-  </style>
-
-
-
-
-<div style="background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);">
-  <div style="margin: 12%;text-align: center;">
-    <h2 style="padding-top: 40px;">Our Services</h2>
-    <div class="service-container">
-      <div class="service-text">
-        <h3>Personalized Workouts</h3>
-        <p>Get tailored workouts designed to fit your lifestyle and goals.</p>
-      </div>
-      <div class="service-image">
-        <img src="img/services_1.png" alt="Person lifting weights">
-      </div>
-    </div>
-    <div class="service-container">
-      <div class="service-image">
-        <img src="img/services_3.jpeg" alt="Healthy meal on a plate">
-      </div>
-      <div class="service-text">
-        <h3>Customized Meal Plans</h3>
-        <p>Receive nutrition plans crafted to fuel your fitness journey.</p>
-      </div>
-    </div>
-    <div class="service-container">
-      <div class="service-text">
-        <h3>Comprehensive Fitness Plans</h3>
-        <p>Unlock your full potential with structured fitness programs.</p>
-      </div>
-      <div class="service-image">
-        <img src="img/services_1.png" alt="Person running outdoors">
-      </div>
-    </div>
-    <div class="service-container">
-      <div class="service-image">
-        <img src="img/services_4.jpeg" alt="Person meditating in nature">
-      </div>
-      <div class="service-text">
-        <h3>Just Yoga</h3>
-        <p>Find inner balance and flexibility with our yoga sessions.</p>
-      </div>
-    </div>
-    <div class="service-container">
-      <div class="service-text">
-        <h3>Mindfulness Tips</h3>
-        <p>Discover techniques for an active body and a calm mind.</p>
-      </div>
-      <div class="service-image">
-        <img src="img/services_5.png" alt="Person practicing mindfulness">
-      </div>
-    </div>
-    <div class="service-container">
-      <div class="service-image">
-        <img src="img/services_6.png" alt="Personal trainer assisting a client">
-      </div>
-      <div class="service-text">
-        <h3>Personal Training Coaches</h3>
-        <p>Work with expert coaches for personalized guidance and motivation.</p>
-      </div>
-    </div>
-  </div>
-  </div>
-
-
-
-  <!-- JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script>
-    // Initialize Materialize components
-    document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.sidenav');
-      var instances = M.Sidenav.init(elems);
-
-      // Change menu icon to three lines icon on small screens
-      var navToggle = document.querySelector('.sidenav-trigger');
-      if (window.innerWidth < 992) {
-        navToggle.innerHTML = '<i class="material-icons">menu</i>';
-      } else {
-        navToggle.innerHTML = '<i class="material-icons">menu</i>';
-      }
-    });
-  </script>
+            // Change menu icon to three lines icon on small screens
+            var navToggle = document.querySelector('.sidenav-trigger');
+            if (window.innerWidth < 992) {
+                navToggle.innerHTML = '<i class="material-icons">menu</i>';
+            } else {
+                navToggle.innerHTML = '<i class="material-icons">menu</i>';
+            }
+        });
+    </script>
 </body>
 </html>
