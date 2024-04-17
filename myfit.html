@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Internal CSS -->
+    <style>
+        <style >
+        /* Internal CSS */
+        nav {
+            background-color: #786ce9; /* New shade */
+            padding: 0 10px; /* Add padding to align the logo properly */
+        }
+        /* Centering the logo */
+        .brand-logo {
+            display: flex;
+            align-items: center;
+        }
+
+            .brand-logo img {
+                max-height: 64px; /* Limit the height of the logo */
+                max-width: auto; /* Ensure the logo scales properly */
+            }
+
+        /* Banner styles */
+        .banner {
+            background-color: #a99df2; /* New color shade for the banner */
+            padding: 100px 20px; /* Increase padding for larger size */
+            color: white; /* Text color */
+        }
+
+        .banner-text {
+            font-size: 2rem; /* Font size for main heading */
+            font-weight: bold; /* Bold font for emphasis */
+        }
+
+        .banner-description {
+            font-size: 1.2rem; /* Font size for description */
+            margin-bottom: 20px; /* Add margin at the bottom */
+        }
+
+        .banner-button {
+            background-color: #786ce9; /* Button color */
+            color: white; /* Text color */
+            padding: 10px 20px; /* Padding for button */
+            text-decoration: none; /* Remove underline */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s; /* Smooth transition on hover */
+        }
+
+            .banner-button:hover {
+                background-color: #5c4ad8; /* Darker color on hover */
+            }
+
+        /* Right side images */
+        .triangle-container {
+            position: relative;
+            width: 300px; /* Adjust width of the container */
+            height: 300px; /* Adjust height of the container */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .triangle-image {
+            width: 120px; /* Adjust image size as needed */
+            height: 120px; /* Adjust image size as needed */
+            border-radius: 50%; /* Make the image circular */
+            border: 2px solid white; /* Add border to images */
+            position: absolute;
+        }
+
+        .top {
+            top: 0;
+        }
+
+        .left {
+            top: 100px; /* Adjust top position for left image */
+            left: -40px; /* Adjust left position for left image */
+        }
+
+        .right {
+            top: 100px; /* Adjust top position for right image */
+            right: -80px; /* Adjust right position for right image */
+        }
+
+        .bottom {
+            bottom: -40px; /* Adjust bottom position for bottom image */
+            left: 100px; /* Adjust left position for bottom image */
+        }
+
+        /* Pricing Table Styles */
+        .pricing-table {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 50px auto;
+            width: 80%;
+        }
+
+            .pricing-table .plan {
+                background-color: #f2f2f2;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 20px;
+                text-align: center;
+                margin: 10px;
+                width: 25%;
+            }
+
+                .pricing-table .plan h3 {
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                }
+
+                .pricing-table .plan p {
+                    font-size: 16px;
+                    line-height: 1.5;
+                }
+
+                .pricing-table .plan .price {
+                    font-size: 28px;
+                    color: #333;
+                    margin-bottom: 10px;
+                }
+
+                .pricing-table .plan .button {
+                    background-color: #007bff;
+                    border: none;
+                    color: white;
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                .pricing-table .plan.featured {
+                    background-color: #ddd;
+                    border-color: #999;
+                }
+
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: left;
+            padding: 20px;
+        }
+
+        /* Graph container */
+        .graph-container {
+            background-color: #f2f2f2;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            width: 30%; /* Adjust width for smaller containers */
+            max-width: 250px; /* Maximum width */
+        }
+
+        /* Graph title */
+        .graph-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Graph canvas */
+        canvas {
+            max-width: 100%; /* Make canvas responsive */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        /horizontal container/
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px; /* Adjust padding as needed */
+            margin-bottom: 20px; /* Adjust margin as needed */
+        }
+
+        /* Adjustments for responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                flex-wrap: wrap;
+            }
+
+            .item {
+                width: calc(50% - 20px); /* Two items per row on smaller screens */
+                margin-bottom: 20px;
+            }
+        }
+
+        .item {
+            width: calc(25% - 20px); /* 4 units with padding */
+            padding: 20px; /* Padding inside each container */
+            box-sizing: border-box;
+            border-radius: 10px; /* Rounded corners for each container */
+            overflow: hidden; /* Ensure image stays within container */
+            background-color: #f4f4f4; /* Background color for containers */
+        }
+
+            .item img {
+                width: 100%; /* Ensure image fills entire container */
+                height: auto; /* Maintain aspect ratio */
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+
+            Container 1
+        </div>
+        <div class="item">Container 2</div>
+        <div class="item">Container 3</div>
+        <div class="item">Container 4</div>
+    </div>
+
+    <div class="container">
+        <div class="item">Container 5</div>
+        <div class="item">Container 6</div>
+        <div class="item">Container 7</div>
+        <div class="item">Container 8</div>
+    </div>
+
+    <div class="dashboard">
+        <!-- Graph 1 -->
+        <div class="graph-container">
+            <h3 class="graph-title">Graph 1</h3>
+            <canvas id="graph1"></canvas>
+        </div>
+        <!-- Graph 2 -->
+        <div class="graph-container">
+            <h3 class="graph-title">Graph 2</h3>
+            <canvas id="graph2"></canvas>
+        </div>
+        <!-- Graph 3 -->
+        <div class="graph-container">
+            <h3 class="graph-title">Graph 3</h3>
+            <canvas id="graph3"></canvas>
+        </div>
+        <div class="graph-container">
+            <h3 class="graph-title">Graph 2</h3>
+            <canvas id="graph2"></canvas>
+        </div>
+    </div>
+
+    <!-- JavaScript to create charts -->
+    <script>// Chart 1
+            var ctx1 = document.getElementById('graph1').getContext('2d');
+            var chart1 = new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Chart 2
+            var ctx2 = document.getElementById('graph2').getContext('2d');
+            var chart2 = new Chart(ctx2, {
+                type: 'line',
+                data: {
+                    labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                    datasets: [{
+                        label: 'Sales',
+                        data: [12, 19, 3, 5, 2, 3, 10],
+                        fill: false,
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Chart 3</script>
+</body>
+</html>
