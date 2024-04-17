@@ -3,106 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Fit.co</title>
+    <title>About Us - Your Website</title>
     <!-- Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <style>
         /* Internal CSS */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
-        }
-
         nav {
-            background-color: #00bcd4;
-            padding: 10px 20px;
+            background-color: #786ce9; /* New shade */
+            padding: 0 10px; /* Add padding to align the logo properly */
+        }
+        /* Centering the logo */
+        .brand-logo {
+            display: flex;
+            align-items: center;
         }
 
-        .brand-logo img {
-            max-height: 50px;
-        }
-
-        .banner {
-            background-image: url('https://via.placeholder.com/1500x400?text=About+Us+Banner');
-            background-size: cover;
-            background-position: center;
-            padding: 100px 0;
-            text-align: center;
-            color: #fff;
-        }
-
-            .banner h2 {
-                font-size: 3rem;
-                margin-bottom: 20px;
+            .brand-logo img {
+                max-height: 64px; /* Limit the height of the logo */
+                max-width: auto; /* Ensure the logo scales properly */
             }
 
+        /* Banner styles */
+        .banner {
+            background-color: #a99df2; /* New color shade for the banner */
+            padding: 100px 20px; /* Increase padding for larger size */
+            color: white; /* Text color */
+        }
+
+        .banner-text {
+            font-size: 2rem; /* Font size for main heading */
+            font-weight: bold; /* Bold font for emphasis */
+        }
+
+        .banner-description {
+            font-size: 1.2rem; /* Font size for description */
+            margin-bottom: 20px; /* Add margin at the bottom */
+        }
+
+        /* Main content */
         .main-content {
-            padding: 50px 20px;
+            padding: 50px 20px; /* Add padding for content */
+        }
+
+        .mission-section {
+            margin-bottom: 50px; /* Add space between sections */
+        }
+
+        .team-section {
+            margin-top: 50px; /* Add space between sections */
         }
 
         .team-member {
-            margin-bottom: 40px;
+            margin-bottom: 20px; /* Add space between team members */
         }
 
         .member-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 5px solid #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 150px; /* Adjust width */
+            height: 150px; /* Adjust height */
+            border-radius: 50%; /* Make images circular */
         }
 
-        .member-name {
-            font-size: 1.5rem;
-            margin-top: 20px;
-        }
-
-        .member-role {
-            color: #888;
-            font-size: 1.2rem;
-        }
-
+        /* Table */
         .project-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 40px;
         }
 
             .project-table th,
             .project-table td {
-                border: 1px solid #ddd;
-                padding: 12px;
+                border: 1px solid #dddddd;
                 text-align: left;
+                padding: 8px;
             }
 
             .project-table th {
                 background-color: #f2f2f2;
             }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
     </style>
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav>
         <div class="nav-wrapper">
+            <!-- Removed the logo text -->
+            <!-- Added the logo image -->
             <a href="#" class="brand-logo">
-                <img src="https://via.placeholder.com/200x50?text=Fit.co" alt="Fit.co Logo">
+                <img src="img/logo2.png" alt="Fit.co Logo">
             </a>
+            <!-- End of logo area -->
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">FitMe</a></li>
+                <li><a href="#">AboutUs</a></li>
+            </ul>
         </div>
     </nav>
+
+    <!-- Side Navigation (Mobile) -->
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">FitMe</a></li>
+        <li><a href="#">AboutUs</a></li>
+    </ul>
 
     <!-- Banner -->
     <div class="banner">
         <div class="container">
-            <h2>About Us</h2>
-            <p>Learn more about our team and what drives us.</p>
+            <div class="row">
+                <!-- Left side text -->
+                <div class="col s12">
+                    <h2 class="banner-text">About Us</h2>
+                    <p class="banner-description">Learn more about our team and what drives us.</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -110,10 +124,18 @@
     <div class="main-content">
         <div class="container">
             <!-- Mission Section -->
-            <div class="row">
+            <div class="row mission-section">
                 <div class="col s12">
                     <h3>Our Mission</h3>
-                    <p>At Fit.co, our mission is to empower individuals to lead healthier and happier lives through fitness and wellness. We believe that everyone deserves access to effective and enjoyable fitness programs, nutritious recipes, and mindfulness practices that nourish both body and mind. With our dedicated team of experts, we strive to provide personalized solutions and support to our community, fostering a culture of growth, positivity, and wellbeing. Our goal is to inspire and motivate individuals to embrace a lifestyle of vitality, resilience, and self-improvement, ultimately enabling them to thrive in every aspect of their lives.</p>
+                    <p>At Fit.co, our mission is to empower individuals to lead healthier and happier lives through fitness and wellness. We believe that everyone deserves access to effective and enjoyable fitness programs, nutritious recipes, and mindfulness practices that nourish both body and mind.</p>
+                </div>
+            </div>
+
+            <!-- Values Section -->
+            <div class="row mission-section">
+                <div class="col s12">
+                    <h3>Our Values</h3>
+                    <p>Our values serve as the cornerstone of our company culture and guide our every decision and action. We are committed to integrity, transparency, and accountability, ensuring that honesty and ethics are at the forefront of everything we do. We prioritize innovation, constantly seeking new ways to enhance our products and services to better serve our community.</p>
                 </div>
             </div>
 
@@ -125,23 +147,23 @@
                     <div class="row">
                         <div class="col s6 m3 team-member">
                             <img src="https://raw.githubusercontent.com/Nikita-284/Assignment_LookAndFeel/master/img/Nikita.jpeg" alt="Nikita Gill" class="member-img">
-                            <h4 class="member-name">Nikita Gill</h4>
-                            <p class="member-role">Role: Designer</p>
+                            <h4>Nikita Gill</h4>
+                            <p>Role: Software Engineer</p>
                         </div>
                         <div class="col s6 m3 team-member">
-                            <img src="https://raw.githubusercontent.com/Nikita-284/Assignment_LookAndFeel/master/img/Rishabh.jpeg" alt="Rishabh Singh" class="member-img">
-                            <h4 class="member-name">Rishabh Singh</h4>
-                            <p class="member-role">Role: Developer</p>
+                            <img src="https://raw.githubusercontent.com/Nikita-284/Assignment_LookAndFeel/master/img/Rishabh.jpg" alt="Rishabh Singh" class="member-img">
+                            <h4>Rishabh Singh</h4>
+                            <p>Role: Data Analyst</p>
                         </div>
                         <div class="col s6 m3 team-member">
                             <img src="https://raw.githubusercontent.com/Nikita-284/Assignment_LookAndFeel/master/img/Gayatri.jpeg" alt="Gayatri Mohan" class="member-img">
-                            <h4 class="member-name">Gayatri Mohan</h4>
-                            <p class="member-role">Role: Marketer</p>
+                            <h4>Gayatri Mohan</h4>
+                            <p>Role: Software Engineer</p>
                         </div>
                         <div class="col s6 m3 team-member">
                             <img src="https://raw.githubusercontent.com/Nikita-284/Assignment_LookAndFeel/master/img/Atharva.jpeg" alt="Atharva Sripaad" class="member-img">
-                            <h4 class="member-name">Atharva Sripaad</h4>
-                            <p class="member-role">Role: Project Manager</p>
+                            <h4>Atharva Sripaad</h4>
+                            <p>Role: Software Engineer</p>
                         </div>
                     </div>
                 </div>
@@ -186,26 +208,5 @@
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Fit.co. All rights reserved.</p>
-    </footer>
-
-    <!-- JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.sidenav');
-            var instances = M.Sidenav.init(elems);
-
-            var navToggle = document.querySelector('.sidenav-trigger');
-            if (window.innerWidth < 992) {
-                navToggle.innerHTML = '<i class="material-icons">menu</i>';
-            } else {
-                navToggle.innerHTML = '<i class="material-icons">menu</i>';
-            }
-        });
-    </script>
 </body>
 </html>
