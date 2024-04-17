@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>W3.CSS Template</title>
+<title>Fit.co</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/main.css">
@@ -9,27 +9,44 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-
 body, html {
   height: 100%;
   line-height: 1.8;
 }
-
 /* Full height image header */
 .bgimg-1 {
   background-position: center;
   background-size: cover;
   background-image: url("/w3images/mac.jpg");
-  min-height: 100%;
+  min-height: 70%;
 }
-
 .bar .button {
   padding: 16px;
+}
+#main {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Set the container height to 100% of the viewport height */
+}
+#main video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Set the video height to cover the entire container */
+  object-fit: cover;
+}
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(48,25,52,0.75);
 }
 </style>
 </head>
 <body>
-
 <!-- Navbar (sit on top) -->
 <div class="top">
   <div class="bar white card" id="myNavbar">
@@ -43,13 +60,11 @@ body, html {
       <a href="#contact" class="bar-item button"><i class="fa fa-envelope"></i> CONTACT</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-
     <a href="javascript:void(0)" class="bar-item button right hide-large hide-medium" onclick="w3_open()">
       <i class="fa fa-bars"></i>
     </a>
   </div>
 </div>
-
 <!-- Sidebar on small screens when clicking the menu icon -->
 <nav class="sidebar bar-block black card animate-left hide-medium hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="bar-item button large padding-16">Close ×</a>
@@ -58,9 +73,9 @@ body, html {
   <a href="aboutus.html" onclick="w3_close()" class="bar-item button">ABOUT US</a>
   <a href="#contact" onclick="w3_close()" class="bar-item button">CONTACT</a>
 </nav>
-
 <!-- Header with full-height image -->
 <header class="bgimg-1 display-container grayscale-min" id="home" style="background-image: url('https://t3.ftcdn.net/jpg/03/86/34/64/360_F_386346461_ycljRSlIn3X54bITkN6YD8jlL8gjtinh.jpg');">
+  
   <div class="display-left text-white" style="padding:48px">
     <span class="jumbo hide-small">Start something that matters</span><br>
     <span class="xxlarge hide-large hide-medium">Start something that matters</span><br>
@@ -349,6 +364,5 @@ function w3_close() {
     mySidebar.style.display = "none";
 }
 </script>
-
 </body>
 </html>
