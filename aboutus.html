@@ -41,34 +41,44 @@
         }
 
         /* Main content */
-        .about-content {
+        .main-content {
             padding: 50px 20px; /* Add padding for content */
         }
 
-        .member-box {
-            background-color: #fff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .mission-section {
+            margin-bottom: 50px; /* Add space between sections */
+        }
+
+        .team-section {
+            margin-top: 50px; /* Add space between sections */
+        }
+
+        .team-member {
+            margin-bottom: 20px; /* Add space between team members */
         }
 
         .member-img {
+            width: 150px; /* Adjust width */
+            height: 150px; /* Adjust height */
+            border-radius: 50%; /* Make images circular */
+        }
+
+        /* Table */
+        .project-table {
             width: 100%;
-            border-radius: 8px;
+            border-collapse: collapse;
         }
 
-        .member-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #333;
-            margin-top: 10px;
-        }
+            .project-table th,
+            .project-table td {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
 
-        .member-description {
-            color: #666;
-            line-height: 1.5;
-        }
+            .project-table th {
+                background-color: #f2f2f2;
+            }
     </style>
 </head>
 <body>
@@ -110,41 +120,85 @@
         </div>
     </div>
 
-    <!-- Main Content.... -->
-    <div class="about-content">
+    <!-- Main Content -->
+    <div class="main-content">
         <div class="container">
+            <!-- Mission Section -->
+            <div class="row mission-section">
+                <div class="col s12">
+                    <h3>Our Mission</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae ipsum mauris. Nulla facilisi. Morbi efficitur consectetur sem, et varius quam eleifend vitae. Mauris condimentum vitae sem non interdum. Sed vestibulum libero vitae est rhoncus dictum. Integer ut sapien orci. In hac habitasse platea dictumst. Nam nec metus id nisl ultricies rutrum. In hac habitasse platea dictumst. Cras tristique lacus eu urna finibus, nec fringilla quam dictum. Nulla facilisi. Morbi commodo, sem ut mattis auctor, magna justo congue sem, in venenatis libero sapien et magna. Praesent nec ex nec lacus fringilla hendrerit. Donec lacinia sit amet lacus ut vehicula. Vestibulum convallis, arcu vel lacinia tincidunt, tortor odio placerat lacus, sit amet scelerisque odio lectus et eros.</p>
+                </div>
+            </div>
+
+            <!-- Team Section -->
+            <div class="row team-section">
+                <div class="col s12">
+                    <h3>Know Our Team</h3>
+                    <!-- Team Members -->
+                    <div class="row">
+                        <div class="col s6 m3 team-member">
+                            <img src="https://raw.githubusercontent.com/Nikita-284/Assignment_LookAndFeel/master/img/Nikita.jpeg" alt="Nikita Gill" class="member-img">
+                            <h4>Nikita Gill</h4>
+                            <p>Role: Designer</p>
+                        </div>
+                        <div class="col s6 m3 team-member">
+                            <img src="https://raw.githubusercontent.com/Nikita-284/Assignment_LookAndFeel/master/img/Rishabh.jpeg" alt="Rishabh Singh" class="member-img">
+                            <h4>Rishabh Singh</h4>
+                            <p>Role: Developer</p>
+                        </div>
+                        <div class="col s6 m3 team-member">
+                            <img src="https://raw.githubusercontent.com/Nikita-284/Assignment_LookAndFeel/master/img/Gayatri.jpeg" alt="Gayatri Mohan" class="member-img">
+                            <h4>Gayatri Mohan</h4>
+                            <p>Role: Marketer</p>
+                        </div>
+                        <div class="col s6 m3 team-member">
+                            <img src="https://raw.githubusercontent.com/Nikita-284/Assignment_LookAndFeel/master/img/Atharva.jpeg" alt="Atharva Sripaad" class="member-img">
+                            <h4>Atharva Sripaad</h4>
+                            <p>Role: Project Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Contribution Section -->
             <div class="row">
-                <div class="col s12 m6">
-                    <div class="member-box">
-                        <h3 class="member-name">Nikita Gill</h3>
-                        <img src="https://raw.githubusercontent.com/Nikita-284/Assignment_LookAndFeel/master/img/pic.jpg" alt="Member 1" class="member-img">
-                        <p class="member-description">John is a passionate developer with a strong background in web development. He loves to create beautiful and functional websites that make a difference.</p>
-                    </div>
-                </div>
-                <div class="col s12 m6">
-                    <div class="member-box">
-                        <h3 class="member-name">Rishabh Singh</h3>
-                        <img src="https://raw.githubusercontent.com/Nikita-284/Assignment_LookAndFeel/master/img/pic.jpg" alt="Member 2" class="member-img">
-                        <p class="member-description">Jane is a creative designer who specializes in user experience and interface design. She enjoys solving complex design challenges and bringing ideas to life.</p>
-                    </div>
-                </div>
-                <div class="col s12 m6">
-                    <div class="member-box">
-                        <h3 class="member-name">Gayatri Moham</h3>
-                        <img src="https://raw.githubusercontent.com/Nikita-284/Assignment_LookAndFeel/master/img/pic.jpg" alt="Member 3" class="member-img">
-                        <p class="member-description">Michael is a skilled marketer with a knack for understanding consumer behavior. He excels in creating effective marketing strategies that drive results.</p>
-                    </div>
-                </div>
-                <div class="col s12 m6">
-                    <div class="member-box">
-                        <h3 class="member-name">Atharava Sripaad</h3>
-                        <img src="https://raw.githubusercontent.com/Nikita-284/Assignment_LookAndFeel/master/img/pic.jpg" alt="Member 4" class="member-img">
-                        <p class="member-description">Emily is a detail-oriented project manager who ensures that projects are delivered on time and within budget. She thrives in fast-paced environments and loves a good challenge.</p>
-                    </div>
+                <div class="col s12">
+                    <h3>Our Project Contribution</h3>
+                    <table class="project-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Responsibilities</th>
+                                <th>Contributions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Rishabh Singh</td>
+                                <td>Developer</td>
+                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            </tr>
+                            <tr>
+                                <td>Nikita Gill</td>
+                                <td>Designer</td>
+                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            </tr>
+                            <tr>
+                                <td>Gayatri Mohan</td>
+                                <td>Marketer</td>
+                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            </tr>
+                            <tr>
+                                <td>Atharva Sripaad</td>
+                                <td>Project Manager</td>
+                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-
 </body>
 </html>
