@@ -153,11 +153,11 @@
         .graph-container {
             background-color: #f2f2f2;
             border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 20px;
+            border-radius: 8px;
+            padding: 10px;
             margin: 10px;
-            width: 30%; /* Adjust width for smaller containers */
-            max-width: 250px; /* Maximum width */
+            width: 100%; /* Adjust width for smaller containers */
+            max-width: 400px; /* Maximum width */
         }
 
         /* Graph title */
@@ -172,7 +172,7 @@
             height: auto; /* Maintain aspect ratio */
         }
 
-        /horizontal container/
+        /*horizontal container*/
         .container {
             display: flex;
             justify-content: space-between;
@@ -208,6 +208,24 @@
     </style>
 </head>
 <body>
+
+    <nav>
+        <div class="nav-wrapper">
+            <!-- Removed the logo text -->
+            <!-- Added the logo image -->
+            <a href="#" class="brand-logo">
+                <img src="img/logo2.png" alt="Fit.co Logo">
+            </a>
+            <!-- End of logo area -->
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">FitMe</a></li>
+                <li><a href="#">AboutUs</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
         <div class="item">
 
@@ -216,13 +234,6 @@
         <div class="item">Container 2</div>
         <div class="item">Container 3</div>
         <div class="item">Container 4</div>
-    </div>
-
-    <div class="container">
-        <div class="item">Container 5</div>
-        <div class="item">Container 6</div>
-        <div class="item">Container 7</div>
-        <div class="item">Container 8</div>
     </div>
 
     <div class="dashboard">
@@ -248,66 +259,67 @@
     </div>
 
     <!-- JavaScript to create charts -->
-    <script>// Chart 1
-            var ctx1 = document.getElementById('graph1').getContext('2d');
-            var chart1 = new Chart(ctx1, {
-                type: 'bar',
-                data: {
-                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                    datasets: [{
-                        label: '# of Votes',
-                        data: [12, 19, 3, 5, 2, 3],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
+    <script>
+    // Chart 1
+        var ctx1 = document.getElementById('graph1').getContext('2d');
+        var chart1 = new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
                     }
                 }
-            });
+            }
+        });
 
-            // Chart 2
-            var ctx2 = document.getElementById('graph2').getContext('2d');
-            var chart2 = new Chart(ctx2, {
-                type: 'line',
-                data: {
-                    labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                    datasets: [{
-                        label: 'Sales',
-                        data: [12, 19, 3, 5, 2, 3, 10],
-                        fill: false,
-                        borderColor: 'rgb(75, 192, 192)',
-                        tension: 0.1
-                    }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
+        // Chart 2
+        var ctx2 = document.getElementById('graph2').getContext('2d');
+        var chart2 = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                datasets: [{
+                    label: 'Sales',
+                    data: [12, 19, 3, 5, 2, 3, 10],
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
                     }
                 }
-            });
+            }
+        });
 
-            // Chart 3</script>
+        // Chart 3</script>
 </body>
 </html>
