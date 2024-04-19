@@ -66,9 +66,9 @@
   .about-banner::before {
 	top: -20px;
 	left: -20px;
-	width: 100px;
-	height: 100px;
-	background-image: url('../img/about-shape-1.png');
+	width: 800px;
+	height: 800px;
+	background-image: url('https://png.pngtree.com/png-clipart/20230620/original/pngtree-approved-stamp-with-green-color-vector-png-image_9192920.png');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
@@ -339,7 +339,6 @@
   
 	.about-h3 { --fs-2: 3rem; }
   
-
 
 
 
