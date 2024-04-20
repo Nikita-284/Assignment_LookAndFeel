@@ -538,6 +538,68 @@
             padding: 3px; /* Remove padding */
         }
 
+        /*.hydration-card {
+            background-color: #FDEBD0;*/ /* Light blue background */
+            /*border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 1%;
+            margin-left: 1%;
+            flex-shrink: 0;
+            width: 18%;
+        }*/
+
+        .meal-log {
+            background-color: #FDEBD0; /* Light blue background */
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 1%;
+            margin-left: 1%;
+            flex-shrink: 0;
+            width: 18%;
+        }
+
+        .meal {
+            flex: calc(50% - 1%); /* Each meal takes up 50% of the container width with margin accounted for */
+            margin: 1%; /* Margin between meals */
+            padding: 2%; /* Padding inside each meal */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .meal-heading {
+            font-weight: bold;
+            margin-bottom: 3%;
+        }
+
+        .meal-input-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .meal-input {
+            flex: 1;
+            margin-right: 3%; /* Margin between input field and button */
+            padding: 3%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .meal-button {
+            padding: 3% 6%;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .calories-output {
+            margin-top: 5%;
+            font-weight: bold;
+        }
+
         
 
     </style>
@@ -583,7 +645,7 @@
                         <div class="heading-text">Hydration</div>
                     </div>
                     <div>
-                        <div class="calories-result" >
+                        <div class="calories-result">
                             <div class="nutrition-activity">
                                 <canvas id="hydrationChart"></canvas>
                             </div>
@@ -672,6 +734,58 @@
                 </div>
             </div>
         </div>
+
+        <div class="cards-container">
+
+            <div class="hydration-card">
+                <div class="hydration-card-content">
+                    <div class="hydration-heading">
+                        <div class="heading-text">Water Intake Log</div>
+                    </div>
+                    <div class="hydration-input-container">
+                        <input type="number" id="waterAmount" class="hydration-input" placeholder="Enter water amount (in liters)">
+                        <button onclick="logWaterIntake()" class="hydration-button">Log</button>
+                    </div>
+                    <div id="hydrationResult" class="hydration-result"></div>
+                </div>
+            </div>
+
+            <div class="meal-log">
+                <div class="meal">
+                    <div class="meal-heading">Breakfast</div>
+                    <div class="meal-input-container">
+                        <input type="number" id="breakfastCalories" class="meal-input" placeholder="Enter calories">
+                        <button onclick="logMeal('breakfast')" class="meal-button">Log</button>
+                    </div>
+                    <div id="breakfastCalorieStatus" class="calories-output"></div>
+                </div>
+                <div class="meal">
+                    <div class="meal-heading">Lunch</div>
+                    <div class="meal-input-container">
+                        <input type="number" id="lunchCalories" class="meal-input" placeholder="Enter calories">
+                        <button onclick="logMeal('lunch')" class="meal-button">Log</button>
+                    </div>
+                    <div id="lunchCalorieStatus" class="calories-output"></div>
+                </div>
+                <div class="meal">
+                    <div class="meal-heading">Mid-day Snack</div>
+                    <div class="meal-input-container">
+                        <input type="number" id="snackCalories" class="meal-input" placeholder="Enter calories">
+                        <button onclick="logMeal('snack')" class="meal-button">Log</button>
+                    </div>
+                    <div id="snackCalorieStatus" class="calories-output"></div>
+                </div>
+                <div class="meal">
+                    <div class="meal-heading">Dinner</div>
+                    <div class="meal-input-container">
+                        <input type="number" id="dinnerCalories" class="meal-input" placeholder="Enter calories">
+                        <button onclick="logMeal('dinner')" class="meal-button">Log</button>
+                    </div>
+                    <div id="dinnerCalorieStatus" class="calories-output"></div>
+                </div>
+            </div>
+        </div>
+
 
         <div style="margin-top: 1px; margin-bottom: 1px; width: 350px; background-color: #FADBD8; color: #000; margin: 0 auto; text-align: center; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); letter-spacing: 1px; ">
             <h2 style="margin: 0; font-size: 1.2rem; font-weight: bold;">Healthy Meal Plan for Today</h2>
@@ -810,339 +924,385 @@
         </div>
 
     </div>
-    
 
-    <div class="right-sidebar">
-        <div class="user-profile">
-            <img src="img/user_photo.jpeg" alt="User Photo" class="user-photo">
-            <div class="user-name">Hi! Jiva Taylor</div>
-        </div>
-        <div class="card">
-            <div class="card-info">56&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;28</div>
-            <div class="card-details">Weight &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Height &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Age</div>
-        </div>
-        <div class="my-schedule-heading">My Schedule</div>
 
-        <div class="card">
-            <div class="card-heading">Monday</div>
-            <div class="logo-and-text">
-                <img src="img/running_logo.jpeg" alt="Running Logo" class="card-logo">
-                <span class="card-text">Running</span>
+        <div class="right-sidebar">
+            <div class="user-profile">
+                <img src="img/user_photo.jpeg" alt="User Photo" class="user-photo">
+                <div class="user-name">Hi! Jiva Taylor</div>
             </div>
-        </div>
-
-        <div class="card">
-            <div class="card-heading">Tuesday</div>
-            <div class="logo-and-text">
-                <img src="img/sleeping_logo.jpeg" alt="Running Logo" class="card-logo">
-                <span class="card-text">Workout</span>
+            <div class="card">
+                <div class="card-info">56&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;28</div>
+                <div class="card-details">Weight &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Height &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Age</div>
             </div>
-        </div>
+            <div class="my-schedule-heading">My Schedule</div>
 
-        <div class="card">
-            <div class="card-heading">Wednesday</div>
-            <div class="logo-and-text">
-                <img src="img/weight_loss_logo.jpeg" alt="Running Logo" class="card-logo">
-                <span class="card-text">Weight Loss</span>
+            <div class="card">
+                <div class="card-heading">Monday</div>
+                <div class="logo-and-text">
+                    <img src="img/running_logo.jpeg" alt="Running Logo" class="card-logo">
+                    <span class="card-text">Running</span>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <div class="card-heading">Thursday</div>
-            <div class="logo-and-text">
-                <img src="img/yoga_logo_rightbar.jpeg" alt="Running Logo" class="card-logo">
-                <span class="card-text">Yoga</span>
+            <div class="card">
+                <div class="card-heading">Tuesday</div>
+                <div class="logo-and-text">
+                    <img src="img/sleeping_logo.jpeg" alt="Running Logo" class="card-logo">
+                    <span class="card-text">Workout</span>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <div class="card-heading">Friday</div>
-            <div class="logo-and-text">
-                <img src="img/swimming_logo.jpeg" alt="Running Logo" class="card-logo">
-                <span class="card-text">Swimming</span>
+            <div class="card">
+                <div class="card-heading">Wednesday</div>
+                <div class="logo-and-text">
+                    <img src="img/weight_loss_logo.jpeg" alt="Running Logo" class="card-logo">
+                    <span class="card-text">Weight Loss</span>
+                </div>
             </div>
+
+            <div class="card">
+                <div class="card-heading">Thursday</div>
+                <div class="logo-and-text">
+                    <img src="img/yoga_logo_rightbar.jpeg" alt="Running Logo" class="card-logo">
+                    <span class="card-text">Yoga</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-heading">Friday</div>
+                <div class="logo-and-text">
+                    <img src="img/swimming_logo.jpeg" alt="Running Logo" class="card-logo">
+                    <span class="card-text">Swimming</span>
+                </div>
+            </div>
+
+
+            <!-- Add your schedule content here -->
         </div>
+        <script>
 
+            let waterIntakeLog = [];
+            let hydrationResultElement = document.getElementById('hydrationResult');
 
-        <!-- Add your schedule content here -->
-    </div>
-    <script>
-
-        let waterIntakeLog = [];
-        let hydrationResultElement = document.getElementById('hydrationResult');
-
-        function logWaterIntake() {
-            const waterAmount = parseFloat(document.getElementById('waterAmount').value);
-            waterIntakeLog.push(waterAmount);
-            calculateHydration();
-        }
-
-        function calculateHydration() {
-            const totalWaterIntake = waterIntakeLog.reduce((acc, curr) => acc + curr, 0);
-            const hydrationPercentage = (totalWaterIntake / 5) * 100; // Assuming a daily recommended intake of 5L
-
-            let message;
-            if (hydrationPercentage >= 100) {
-                message = `You've reached your hydration goal (${hydrationPercentage.toFixed(1)}%). Great job!`;
-            } else {
-                message = `Your hydration level : ${hydrationPercentage.toFixed(1)}%.`;
+            function logWaterIntake() {
+                const waterAmount = parseFloat(document.getElementById('waterAmount').value);
+                waterIntakeLog.push(waterAmount);
+                calculateHydration();
             }
 
-            hydrationResultElement.textContent = message;
-        }
+            function calculateHydration() {
+                const totalWaterIntake = waterIntakeLog.reduce((acc, curr) => acc + curr, 0);
+                const hydrationPercentage = (totalWaterIntake / 5) * 100; // Assuming a daily recommended intake of 5L
 
-        const sleepData = {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-            datasets: [{
-                label: 'Light Sleep (hr)',
-                backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1,
-                data: [3, 5, 2, 7, 3.5, 4, 6], // Sample data for light sleep duration
-            }, {
-                label: 'Deep Sleep (hr)',
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 1,
-                data: [1, 2, 2.5, 1.5, 3, 2, 1.75], // Sample data for deep sleep duration
-            }]
-        };
-
-        // Configuration options for sleep rhythm bar chart
-        const sleepChartOptions = {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                x: {
-                    stacked: true,
-                },
-                y: {
-                    stacked: true,
+                let message;
+                if (hydrationPercentage >= 100) {
+                    message = `You've reached your hydration goal (${hydrationPercentage.toFixed(1)}%). Great job!`;
+                } else {
+                    message = `Your hydration level : ${hydrationPercentage.toFixed(1)}%.`;
                 }
+
+                hydrationResultElement.textContent = message;
             }
-        };
 
-        // Create sleep rhythm bar chart
+            function logMeal(meal) {
+                let calories;
+                let maxCalories;
 
-        var canvas = document.getElementById('sleepRhythmChart');
-        canvas.width = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
-
-        const ctx = document.getElementById('sleepRhythmChart').getContext('2d');
-        const sleepRhythmChart = new Chart(ctx, {
-            type: 'bar',
-            data: sleepData,
-            options: sleepChartOptions,
-        });
-
-        // Line chart data
-        var activityData = {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-            datasets: [{
-                label: 'Steps',
-                data: [7500, 8200, 7800, 8400, 8800, 9000, 8200], // Example data (replace with actual steps data)
-                borderColor: '#36a2eb',
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderWidth: 2
-            }]
-        };
-
-        var canvas = document.getElementById('activityChart');
-        canvas.width = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
-
-        var ctxActivity = document.getElementById('activityChart').getContext('2d');
-
-        // Create the line chart
-        var activityChart = new Chart(ctxActivity, {
-            type: 'line',
-            data: activityData,
-
-        });
-
-        const nutrientData = {
-            labels: ['Carbs', 'Protein', 'Fats'],
-            datasets: [{
-                label: 'Nutrients',
-                data: [40, 30, 30], // Sample data for carbs, protein, and fats percentages
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.5)', // Carbs color
-                    'rgba(54, 162, 235, 0.5)', // Protein color
-                    'rgba(255, 206, 86, 0.5)'  // Fats color
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',  // Carbs border color
-                    'rgba(54, 162, 235, 1)',  // Protein border color
-                    'rgba(255, 206, 86, 1)'   // Fats border color
-                ],
-                borderWidth: 1
-            }]
-        };
-
-        // Configuration options for nutrient distribution donut chart
-        const nutrientDistributionOptions = {
-            responsive: true,
-            maintainAspectRatio: true,
-            plugins: {
-                legend: {
-                    position: 'right', // Position legend on the right side
-                    labels: {
-                        fontSize: 4, // Adjust legend item font size
-                        usePointStyle: true, // Use color dots instead of rectangles
-                        boxWidth: 10, // Set the size of color dots
-                        pointRadius: 0.2,
-                    },
-                    generateLabels: function (chart) {
-                        const data = chart.data;
-                        if (data.labels.length && data.datasets.length) {
-                            return data.labels.map(function (label, i) {
-                                const meta = chart.getDatasetMeta(0);
-                                const ds = data.datasets[0];
-                                const arc = meta.data[i];
-                                const custom = arc && arc.custom || {};
-                                const getValueAtIndexOrDefault = Chart.helpers.getValueAtIndexOrDefault;
-                                const arcOpts = chart.options.elements.arc;
-                                const fill = custom.backgroundColor ? custom.backgroundColor : getValueAtIndexOrDefault(ds.backgroundColor, i, arcOpts.backgroundColor);
-                                const stroke = custom.borderColor ? custom.borderColor : getValueAtIndexOrDefault(ds.borderColor, i, arcOpts.borderColor);
-                                const bw = custom.borderWidth ? custom.borderWidth : getValueAtIndexOrDefault(ds.borderWidth, i, arcOpts.borderWidth);
-
-                                // Build Legend Item
-                                return {
-                                    text: label,
-                                    fillStyle: fill,
-                                    strokeStyle: stroke,
-                                    lineWidth: bw,
-                                    hidden: isNaN(ds.data[i]) || meta.data[i].hidden,
-
-                                    // Extra data used for toggling the correct item
-                                    index: i
-                                };
-                            });
-                        }
-                        return [];
-                    }
+                switch (meal) {
+                    case 'breakfast':
+                        calories = parseFloat(document.getElementById('breakfastCalories').value);
+                        maxCalories = 500;
+                        break;
+                    case 'lunch':
+                        calories = parseFloat(document.getElementById('lunchCalories').value);
+                        maxCalories = 1200;
+                        break;
+                    case 'snack':
+                        calories = parseFloat(document.getElementById('snackCalories').value);
+                        maxCalories = 300;
+                        break;
+                    case 'dinner':
+                        calories = parseFloat(document.getElementById('dinnerCalories').value);
+                        maxCalories = 800;
+                        break;
                 }
+
+                if (isNaN(calories) || calories < 0) {
+                    alert('Please enter a valid calorie value');
+                    return;
+                }
+
+                const percentage = (calories / maxCalories) * 100;
+
+                let message;
+                if (percentage < 70) {
+                    message = 'You are calorie-deficit';
+                } else if (percentage > 100) {
+                    message = 'You had a high-calorie diet';
+                } else {
+                    message = 'Your calorie intake is within the recommended range';
+                }
+
+                // Update the message element for the specific meal
+                document.getElementById(`${meal}CalorieStatus`).textContent = message;
             }
-        };
 
-        var canvas = document.getElementById('nutrientDistributionChart');
-        canvas.width = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
 
-        // Create nutrient distribution donut chart
-        const ctxNutrient = document.getElementById('nutrientDistributionChart').getContext('2d');
-        const nutrientDistributionChart = new Chart(ctxNutrient, {
-            type: 'doughnut',
-            data: nutrientData,
-            options: nutrientDistributionOptions,
-        });
 
-        
 
-        // Sample data for activities pie chart
-        const activitiesData = {
-            labels: ['Swim', 'Run', 'Yoga', 'Gym'],
-            datasets: [{
-                label: 'Activities',
-                data: [25, 35, 20, 20], // Sample data percentages for each activity
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.5)', // Swimming color
-                    'rgba(54, 162, 235, 0.5)', // Running color
-                    'rgba(255, 206, 86, 0.5)', // Yoga color
-                    'rgba(75, 192, 192, 0.5)'  // Weight Loss color
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)', // Swimming border color
-                    'rgba(54, 162, 235, 1)', // Running border color
-                    'rgba(255, 206, 86, 1)', // Yoga border color
-                    'rgba(75, 192, 192, 1)'  // Weight Loss border color
-                ],
-                borderWidth: 1,
-            }]
-        };
+            const sleepData = {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Light Sleep (hr)',
+                    backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1,
+                    data: [3, 5, 2, 7, 3.5, 4, 6], // Sample data for light sleep duration
+                }, {
+                    label: 'Deep Sleep (hr)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1,
+                    data: [1, 2, 2.5, 1.5, 3, 2, 1.75], // Sample data for deep sleep duration
+                }]
+            };
 
-        // Configuration options for activities pie chart
-        const activitiesChartOptions = {
-            responsive: true,
-            maintainAspectRatio: true,
-            plugins: {
-                legend: {
-                    position: 'right', // Position legend on the right side
-                    labels: {
-                        fontSize: 8, // Adjust legend item font size
-                        usePointStyle: true, // Use color dots instead of rectangles
-                        boxWidth: 10, // Set the size of color dots
-                        pointRadius: 1, // Add padding between legend items
-                    },
-                }
-            },
-        };
-
-        var canvas = document.getElementById('activitiesChart');
-        canvas.width = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
-
-        // Create activities pie chart
-        const ctxActivities = document.getElementById('activitiesChart').getContext('2d');
-        const activitiesChart = new Chart(ctxActivities, {
-            type: 'pie',
-            data: activitiesData,
-            options: activitiesChartOptions,
-        });
-
-        // Line chart data
-        var hydrationData = {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-            datasets: [{
-                label: '',
-                data: [80, 40, 60, 55, 70, 35, 60], // Example data (replace with actual data)
-                borderColor: 'rgba(54, 162, 235, 0.9)',
-                backgroundColor: 'rgba(54, 162, 235, 0.2)', // Background color for the area below the line
-                borderWidth: 1,
-                fill: true, // Fill the area under the line
-                pointRadius: 0, // Set the size of data points (markers)
-                borderWidth: 0.9,
-            }]
-        };
-
-        var canvas = document.getElementById('hydrationChart');
-        canvas.width = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
-        var ctxHydration = document.getElementById('hydrationChart').getContext('2d');
-
-        // Create the line chart
-        var hydrationChart = new Chart(ctxHydration, {
-            type: 'line',
-            data: hydrationData,
-            options: {
-                elements: {
-                    line: {
-                        borderWidth: 0 // Set border width of the line to 0
-                    }
-                },
+            // Configuration options for sleep rhythm bar chart
+            const sleepChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
                 scales: {
-                    y: {
-                        beginAtZero: true, // Start the y-axis at zero
-                        max: 100, // Set the maximum value of the y-axis
-                        ticks: {
-                            stepSize: 10 // Set the interval between ticks on the y-axis
-                        }
-                    },
                     x: {
-                        display: false // Hide the x-axis labels
+                        stacked: true,
+                    },
+                    y: {
+                        stacked: true,
                     }
-                },
+                }
+            };
+
+            // Create sleep rhythm bar chart
+
+            var canvas = document.getElementById('sleepRhythmChart');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+
+            const ctx = document.getElementById('sleepRhythmChart').getContext('2d');
+            const sleepRhythmChart = new Chart(ctx, {
+                type: 'bar',
+                data: sleepData,
+                options: sleepChartOptions,
+            });
+
+            // Line chart data
+            var activityData = {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Steps',
+                    data: [7500, 8200, 7800, 8400, 8800, 9000, 8200], // Example data (replace with actual steps data)
+                    borderColor: '#36a2eb',
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderWidth: 2
+                }]
+            };
+
+            var canvas = document.getElementById('activityChart');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+
+            var ctxActivity = document.getElementById('activityChart').getContext('2d');
+
+            // Create the line chart
+            var activityChart = new Chart(ctxActivity, {
+                type: 'line',
+                data: activityData,
+
+            });
+
+            const nutrientData = {
+                labels: ['Carbs', 'Protein', 'Fats'],
+                datasets: [{
+                    label: 'Nutrients',
+                    data: [40, 30, 30], // Sample data for carbs, protein, and fats percentages
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)', // Carbs color
+                        'rgba(54, 162, 235, 0.5)', // Protein color
+                        'rgba(255, 206, 86, 0.5)'  // Fats color
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',  // Carbs border color
+                        'rgba(54, 162, 235, 1)',  // Protein border color
+                        'rgba(255, 206, 86, 1)'   // Fats border color
+                    ],
+                    borderWidth: 1
+                }]
+            };
+
+            // Configuration options for nutrient distribution donut chart
+            const nutrientDistributionOptions = {
+                responsive: true,
+                maintainAspectRatio: true,
                 plugins: {
                     legend: {
+                        position: 'right', // Position legend on the right side
                         labels: {
-                            fontSize: 10, // Adjust the font size of the legend labels
-                            boxWidth: 0
+                            fontSize: 4, // Adjust legend item font size
+                            usePointStyle: true, // Use color dots instead of rectangles
+                            boxWidth: 10, // Set the size of color dots
+                            pointRadius: 0.2,
+                        },
+                        generateLabels: function (chart) {
+                            const data = chart.data;
+                            if (data.labels.length && data.datasets.length) {
+                                return data.labels.map(function (label, i) {
+                                    const meta = chart.getDatasetMeta(0);
+                                    const ds = data.datasets[0];
+                                    const arc = meta.data[i];
+                                    const custom = arc && arc.custom || {};
+                                    const getValueAtIndexOrDefault = Chart.helpers.getValueAtIndexOrDefault;
+                                    const arcOpts = chart.options.elements.arc;
+                                    const fill = custom.backgroundColor ? custom.backgroundColor : getValueAtIndexOrDefault(ds.backgroundColor, i, arcOpts.backgroundColor);
+                                    const stroke = custom.borderColor ? custom.borderColor : getValueAtIndexOrDefault(ds.borderColor, i, arcOpts.borderColor);
+                                    const bw = custom.borderWidth ? custom.borderWidth : getValueAtIndexOrDefault(ds.borderWidth, i, arcOpts.borderWidth);
+
+                                    // Build Legend Item
+                                    return {
+                                        text: label,
+                                        fillStyle: fill,
+                                        strokeStyle: stroke,
+                                        lineWidth: bw,
+                                        hidden: isNaN(ds.data[i]) || meta.data[i].hidden,
+
+                                        // Extra data used for toggling the correct item
+                                        index: i
+                                    };
+                                });
+                            }
+                            return [];
                         }
                     }
                 }
-            }
-        });
+            };
 
-    </script>
+            var canvas = document.getElementById('nutrientDistributionChart');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+
+            // Create nutrient distribution donut chart
+            const ctxNutrient = document.getElementById('nutrientDistributionChart').getContext('2d');
+            const nutrientDistributionChart = new Chart(ctxNutrient, {
+                type: 'doughnut',
+                data: nutrientData,
+                options: nutrientDistributionOptions,
+            });
+
+
+
+            // Sample data for activities pie chart
+            const activitiesData = {
+                labels: ['Swim', 'Run', 'Yoga', 'Gym'],
+                datasets: [{
+                    label: 'Activities',
+                    data: [25, 35, 20, 20], // Sample data percentages for each activity
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)', // Swimming color
+                        'rgba(54, 162, 235, 0.5)', // Running color
+                        'rgba(255, 206, 86, 0.5)', // Yoga color
+                        'rgba(75, 192, 192, 0.5)'  // Weight Loss color
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)', // Swimming border color
+                        'rgba(54, 162, 235, 1)', // Running border color
+                        'rgba(255, 206, 86, 1)', // Yoga border color
+                        'rgba(75, 192, 192, 1)'  // Weight Loss border color
+                    ],
+                    borderWidth: 1,
+                }]
+            };
+
+            // Configuration options for activities pie chart
+            const activitiesChartOptions = {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'right', // Position legend on the right side
+                        labels: {
+                            fontSize: 8, // Adjust legend item font size
+                            usePointStyle: true, // Use color dots instead of rectangles
+                            boxWidth: 10, // Set the size of color dots
+                            pointRadius: 1, // Add padding between legend items
+                        },
+                    }
+                },
+            };
+
+            var canvas = document.getElementById('activitiesChart');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+
+            // Create activities pie chart
+            const ctxActivities = document.getElementById('activitiesChart').getContext('2d');
+            const activitiesChart = new Chart(ctxActivities, {
+                type: 'pie',
+                data: activitiesData,
+                options: activitiesChartOptions,
+            });
+
+            // Line chart data
+            var hydrationData = {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: '',
+                    data: [80, 40, 60, 55, 70, 35, 60], // Example data (replace with actual data)
+                    borderColor: 'rgba(54, 162, 235, 0.9)',
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)', // Background color for the area below the line
+                    borderWidth: 1,
+                    fill: true, // Fill the area under the line
+                    pointRadius: 0, // Set the size of data points (markers)
+                    borderWidth: 0.9,
+                }]
+            };
+
+            var canvas = document.getElementById('hydrationChart');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            var ctxHydration = document.getElementById('hydrationChart').getContext('2d');
+
+            // Create the line chart
+            var hydrationChart = new Chart(ctxHydration, {
+                type: 'line',
+                data: hydrationData,
+                options: {
+                    elements: {
+                        line: {
+                            borderWidth: 0 // Set border width of the line to 0
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true, // Start the y-axis at zero
+                            max: 100, // Set the maximum value of the y-axis
+                            ticks: {
+                                stepSize: 10 // Set the interval between ticks on the y-axis
+                            }
+                        },
+                        x: {
+                            display: false // Hide the x-axis labels
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                fontSize: 10, // Adjust the font size of the legend labels
+                                boxWidth: 0
+                            }
+                        }
+                    }
+                }
+            });
+
+        </script>
 </body>
 </html>
