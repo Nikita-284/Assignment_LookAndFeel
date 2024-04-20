@@ -74,6 +74,15 @@
             text-align: center; /* Center align the heading */
             margin-bottom: 20px; /* Add space below the heading */
         }
+
+        /* Adjusting column width for medium screens */
+        @media screen and (max-width: 992px) {
+            .col.m6 {
+                width: 50%;
+                float: left;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -105,10 +114,37 @@
     </nav>
 
     <!-- About Section -->
-    <div class="container" style="padding:50px 100px" id="about">
-        <h2 class="center" style="font-weight: 500;">ABOUT US</h2>
-        <p class="center large">Learn more about our team and what drives us.</p>
+    <div class="container" style="padding: 150px 100px; background-image: url('https://github.com/Nikita-284/Assignment_LookAndFeel/raw/master/img/banner_1.jpeg'); background-size: cover; background-position: center; text-align: left;">
+        <h2 style="font-weight: 500; color: white; text-align: left;">ABOUT US</h2>
+        <p style="color: white; text-align: left;">Learn more about our team and what drives us.</p>
     </div>
+
+    <!-- Our Mission Section -->
+    <div class="container text-center" style="padding: 80px 100px; " id="mission">
+        <div class="row">
+            <!-- Left part with text -->
+            <div class="col m6">
+                <div style="padding-right: 30px;">
+                    <h3 style="font-weight: 500; text-align: center;">Our Mission</h3>
+                    <p style="text-align: justify;">
+                        At Fit.co, our mission is to empower individuals to lead healthier and happier lives through fitness and wellness. We believe that everyone deserves access to effective and enjoyable fitness programs, nutritious recipes, and mindfulness practices that nourish both body and mind.
+                    </p>
+                    <!-- Second paragraph -->
+                    <p style="text-align: justify;">
+                        Our commitment extends beyond physical fitness to encompass mental and emotional well-being. We understand the importance of holistic health and offer comprehensive resources to help individuals cultivate balance in all aspects of their lives. By fostering a culture of self-care, mindfulness, and resilience, we empower our community to thrive both inside and outside the gym.
+                    </p>
+                </div>
+            </div>
+            <!-- Right part with image -->
+            <div class="col m6">
+                <img src="https://raw.githubusercontent.com/Nikita-284/Assignment_LookAndFeel/master/img/mission1.jpg" alt="Mission Image" style="max-width: 100%; height: auto;">
+            </div>
+        </div>
+    </div>
+
+
+
+
 
     <!-- Our Values Section -->
     <div id="values-container">
@@ -150,7 +186,7 @@
                         <h3>Nikita Gill</h3>
                         <p class="opacity">Software Engineer</p>
                         <p>An experienced fitness trainer dedicated to helping clients achieve their health and wellness goals.</p>
-                       
+
                     </div>
                 </div>
             </div>
@@ -161,7 +197,7 @@
                         <h3>Rishabh Singh</h3>
                         <p class="opacity">Data Scientist</p>
                         <p>A certified nutritionist passionate about helping individuals improve their dietary habits and overall well-being.</p>
-                       
+
                     </div>
                 </div>
             </div>
@@ -172,7 +208,7 @@
                         <h3>Atharva Sripaad Galphade</h3>
                         <p class="opacity">Software Engineer</p>
                         <p>A dedicated personal trainer committed to helping clients achieve their fitness goals through personalized training programs.</p>
-                       
+
                     </div>
                 </div>
             </div>
@@ -183,16 +219,51 @@
                         <h3>Gayatri Mohan Kshirsagar</h3>
                         <p class="opacity">Software Engineer</p>
                         <p>A certified yoga instructor passionate about guiding individuals on their journey to physical and mental well-being through yoga practice.</p>
-                       
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!--Project Contribution Section...-->
+    <div class="container" style="padding: 80px 100px; background-color: #f2f2f2;" id="contribution">
+        <h3 class="center" style="font-weight: 500;">Project Contribution</h3>
+        <div style="overflow-x:auto;">
+            <table style="width:100%; border-collapse: collapse; text-align: center; border: 1px solid black;">
+                <thead>
+                    <tr style="background-color: #ddd; border: 1px solid black;">
+                        <th style="padding: 12px; border: 1px solid black;">Name</th>
+                        <th style="padding: 12px; border: 1px solid black;">Contributions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid black;">Rishabh Singh</td>
+                        <td style="padding: 12px; border: 1px solid black;">Home Page and About Us</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid black;">Nikita Gill</td>
+                        <td style="padding: 12px; border: 1px solid black;">Home Page and About Us</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid black;">Gayatri Mohan</td>
+                        <td style="padding: 12px; border: 1px solid black;">My Fit Page</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid black;">Atharva Sripaad</td>
+                        <td style="padding: 12px; border: 1px solid black;">My Fit Page</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 
-    <!-- Footer -->
+
+
+
+    <!--Footer-->
     <footer class="center black padding-64">
         <a href="#home" class="button light-grey"><i class="fa fa-arrow-up margin-right"></i>To the top</a>
         <div class="xlarge section" style="padding: 20px;">
@@ -233,224 +304,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Your Website</title>-->
-<!-- Materialize CSS-->
-<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <style>
-        /* Internal CSS */
-        nav {
-            background-color: #fff; /* New shade */
-            padding: 0 10px; /* Add padding to align the logo properly */
-        }
-        /* Centering the logo */
-        .brand-logo {
-            display: flex;
-            align-items: center;
-        }
-
-            .brand-logo img {
-                max-height: 64px; /* Limit the height of the logo */
-                max-width: auto; /* Ensure the logo scales properly */
-            }
-
-        /* Banner styles */
-        .banner {
-            background-color: #a99df2; /* New color shade for the banner */
-            padding: 100px 20px; /* Increase padding for larger size */
-            color: white; /* Text color */
-        }
-
-        .banner-text {
-            font-size: 2rem; /* Font size for main heading */
-            font-weight: bold; /* Bold font for emphasis */
-        }
-
-        .banner-description {
-            font-size: 1.2rem; /* Font size for description */
-            margin-bottom: 20px; /* Add margin at the bottom */
-        }
-
-        /* Main content */
-        .main-content {
-            padding: 50px 20px; /* Add padding for content */
-        }
-
-        .mission-section {
-            margin-bottom: 50px; /* Add space between sections */
-        }
-
-        .team-section {
-            margin-top: 50px; /* Add space between sections */
-        }
-
-        .team-member {
-            margin-bottom: 20px; /* Add space between team members */
-        }
-
-        .member-img {
-            width: 150px; /* Adjust width */
-            height: 150px; /* Adjust height */
-            border-radius: 50%; /* Make images circular */
-        }
-
-        /* Table */
-        .project-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-            .project-table th,
-            .project-table td {
-                border: 1px solid #dddddd;
-                text-align: left;
-                padding: 8px;
-            }
-
-            .project-table th {
-                background-color: #f2f2f2;
-            }
-    </style>
-</head>
-<body>-->
-<!-- Navigation Bar-->
-<!--<nav>
-    <div class="nav-wrapper">
-
-<a href="#" class="brand-logo">
-    <img src="img/logo2.png" alt="Fit.co Logo">
-</a>-->
-<!--End of logo area-->
-<!--<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">FitMe</a></li>
-            <li><a href="#">AboutUs</a></li>
-        </ul>
-    </div>
-</nav>-->
-<!--Side Navigation (Mobile)-->
-<!--<ul class="sidenav" id="mobile-demo">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">FitMe</a></li>
-    <li><a href="#">AboutUs</a></li>
-</ul>-->
-<!--Banner-->
-<!--<div class="banner">
-    <div class="container">
-        <div class="row">-->
-<!--Left side text-->
-<!--<div class="col s12">
-                <h2 class="banner-text">About Us</h2>
-                <p class="banner-description">Learn more about our team and what drives us.</p>
-            </div>
-        </div>
-    </div>
-</div>-->
-<!--Main Content-->
-<!--<div class="main-content">
-    <div class="container">-->
-<!--Mission Section-->
-<!--<div class="row mission-section">
-    <div class="col s12">
-        <h3>Our Mission</h3>
-        <p>At Fit.co, our mission is to empower individuals to lead healthier and happier lives through fitness and wellness. We believe that everyone deserves access to effective and enjoyable fitness programs, nutritious recipes, and mindfulness practices that nourish both body and mind.</p>
-    </div>
-</div>-->
-<!--Values Section-->
-<!--<div class="row mission-section">
-    <div class="col s12">
-        <h3>Our Values</h3>
-        <p>Our values serve as the cornerstone of our company culture and guide our every decision and action. We are committed to integrity, transparency, and accountability, ensuring that honesty and ethics are at the forefront of everything we do. We prioritize innovation, constantly seeking new ways to enhance our products and services to better serve our community.</p>
-    </div>
-</div>-->
-<!-- Team Section-->
-<!--<div class="row team-section">
-    <div class="col s12">
-        <h3>Know Our Team</h3>-->
-<!--Team Members-->
-<!--<div class="row">
-            <div class="col s6 m3 team-member">
-                <img src="https://raw.githubusercontent.com/Nikita-284/Assignment_LookAndFeel/master/img/Nikita.jpeg" alt="Nikita Gill" class="member-img">
-                <h4>Nikita Gill</h4>
-                <p>Role: Software Engineer</p>
-            </div>
-            <div class="col s6 m3 team-member">
-                <img src="https://raw.githubusercontent.com/Nikita-284/Assignment_LookAndFeel/master/img/Rishabh.jpg" alt="Rishabh Singh" class="member-img">
-                <h4>Rishabh Singh</h4>
-                <p>Role: Data Analyst</p>
-            </div>
-            <div class="col s6 m3 team-member">
-                <img src="https://raw.githubusercontent.com/Nikita-284/Assignment_LookAndFeel/master/img/Gayatri.jpeg" alt="Gayatri Mohan" class="member-img">
-                <h4>Gayatri Mohan</h4>
-                <p>Role: Software Engineer</p>
-            </div>
-            <div class="col s6 m3 team-member">
-                <img src="https://raw.githubusercontent.com/Nikita-284/Assignment_LookAndFeel/master/img/Atharva.jpeg" alt="Atharva Sripaad" class="member-img">
-                <h4>Atharva Sripaad</h4>
-                <p>Role: Software Engineer</p>
-            </div>
-        </div>
-    </div>
-</div>-->
-<!--Project Contribution Section...-->
-<!--<div class="row">
-                <div class="col s12">
-                    <h3>Our Project Contribution</h3>
-                    <table class="project-table">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-
-                                <th>Contributions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Rishabh Singh</td>
-
-                                <td>Home Page and about us</td>
-                            </tr>
-                            <tr>
-                                <td>Nikita Gill</td>
-
-                                <td> Home Page and About us </td>
-                            </tr>
-                            <tr>
-                                <td>Gayatri Mohan</td>
-
-                                <td>My Fit Page</td>
-                            </tr>
-                            <tr>
-                                <td>Atharva Sripaad</td>
-
-                                <td> My Fit Page</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</body>
-</html>-->
