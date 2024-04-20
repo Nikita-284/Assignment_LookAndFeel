@@ -168,7 +168,7 @@
 
         .card-container {
             display: flex;
-            gap: 2%; /* Adjust the value as needed for the desired space */
+            gap: 1%; /* Adjust the value as needed for the desired space */
             margin-left: 2%;
             margin-right: 2%;
         }
@@ -220,14 +220,14 @@
 
         /* Styling for Hydration Card */
         .hydration-card {
-            background-color: #EAF2F8; /* Light blue background */
+            background-color: #FDEBD0; /* Light blue background */
             border-radius: 10px;
             padding: 10px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 60%;
-            margin-left: 40%;
+            margin-top: 1%;
+            margin-left: 1%;
             flex-shrink: 0;
-            width: 60%;
+            width: 18%;
         }
 
         .hydration-card-content {
@@ -281,25 +281,25 @@
         }
 
         .calories-card {
-            background-color: #FDEBD0; /* Light blue background */
+            background-color: #FBFCFC; /* Light blue background */
             border-radius: 10px;
-            padding: 5px;
+            padding: 10px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             margin-top: 1%;
             margin-left: 1%;
-            margin-right: 1%;
-            height: 20%;
+            margin-right: 1.4%;
             flex-shrink: 0;
-            width: 21%;
+            width: 18%;
         }
 
         .calories-card-content {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            padding: 5px;
-            margin-left:1%;
-            margin-right: 1%
+            padding: 10px;
+            margin-left: 0%;
+            margin-right: 3%;
+            height: 25%;
         }
 
         .calories-heading {
@@ -315,16 +315,16 @@
             border-radius: 10px;
             display: flex;
             flex-direction: column; /* Align items in a column */
-            justify-content: center; /* Center content vertically */
-            align-items: center; /* Center content horizontally */
-            padding: 10px; /* Increased padding for better spacing */
+            /*justify-content: center;  Center content vertically */
+            /*align-items: center;  Center content horizontally */
+            padding: 5px; /* Increased padding for better spacing */
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             margin-top: 2%;
             margin-left: 1%;
             margin-right: 2%;
             margin-bottom: 1%;
             flex-shrink: 0;
-            width: 55%;
+            width: calc(47% - 2%);
             height: 10%; /* Set height for the container */
         }
 
@@ -337,10 +337,11 @@
 
         .sleep-graph {
             width: 100%;
-            height: 200px;
+            height: 100%;
             background-color: #fff;
             border-radius: 10px;
             border: 1px solid #ccc;
+            margin-right:1%;
         }
 
         .chart-heading {
@@ -353,12 +354,12 @@
         /* recipe */
 
         .recipe-card {
-            position: relative;
-            width: 150px;
-            height: 130px;
-            margin-bottom: 20px;
-            margin-left: 20px;
-            margin-top: 5px;
+            
+            width: 19.3%;
+            height: 200px;
+            margin-bottom: 2%;
+            margin-left: 2%;
+            margin-top: 1%;
             perspective: 1000px;
             display: inline-block;
             padding: 5px;
@@ -412,13 +413,13 @@
         }
 
         .recipe-title {
-            font-size: 0.7rem;
+            font-size: 1rem;
             font-weight: bold;
             margin: 5px 0;
         }
 
         .recipe-label {
-            font-size: 0.8rem;
+            font-size: 1rem;
             margin-bottom: 5px;
         }
 
@@ -439,38 +440,79 @@
             background-color: #eee;
             border-radius: 5px;
             padding: 2px 8px;
-            margin: 5px;
-            font-size: 0.7rem;
+            margin: 1%;
+            font-size: 1rem;
         }
 
         /* Wide Container for Activity */
         .activity-container {
             background-color: #F8F9F9; /* Light blue background */
             border-radius: 10px;
-            padding: 5px;
+            display: flex;
+            flex-direction: column; /* Align items in a column */
+            /*justify-content: center;  Center content vertically */
+            /*align-items: center;  Center content horizontally */
+            padding: 5px; /* Increased padding for better spacing */
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 10px;
-            margin-left: 1px;
-            margin-right: 1px;
-            margin-bottom: 10px;
+            margin-top: 2%;
+            margin-left: 0%;
+            margin-right: 2%;
+            margin-bottom: 1%;
             flex-shrink: 0;
-            width: 46%;
-            height: 170px; /* Set height for the container */
+            width: calc(44% - 3%);
+            height: 10%; /* Set height for the container */
         }
 
         #hydrationChart {
-            width: 100%;
-            height: 100%;
+            width: 80%;
+            height: 84%;
+            margin-right: 0%;
+            margin-left: 1.5%;
+            margin-bottom: 0.6%;
+            border: none;
         }
 
+        #nutrientDistributionChart {
+            width: 82%;
+            height: 100%;
+            margin-right: 1%;
+            margin-left: 1.5%;
+            margin-bottom: 0.01%;
+            margin-top: 0.5%;
+            padding: 3px;
+        }
 
+        #activitiesChart {
+            width: 82%;
+            height: 100%;
+            margin-right: 1%;
+            margin-left: 1.5%;
+            margin-bottom: 0.01%;
+            margin-top: 0.5%;
+            padding: 3px;
+        }
+
+        #sleepRhythmChart {
+            width: 100%;
+            height: 80%;
+            margin-right: 0%;
+            margin-left: 0%;
+        }
+
+        #activityChart {
+            width: 100%;
+            height: 80%;
+            margin-right: 0%;
+            margin-left: 0%;
+        }
 
         .activity-graph {
             width: 100%;
-            height: 150px;
+            height: 100%;
             background-color: #fff;
             border-radius: 10px;
             border: 1px solid #ccc;
+            margin-right: 1%;
         }
 
         .calories-result {
@@ -487,7 +529,7 @@
             background-color: #fff;
             border-radius: 10px;
             border: 1px solid #ccc;
-            padding: 1px;
+            padding: 3px;
         }
 
         .additional-info {
@@ -495,6 +537,9 @@
             text-align: left; /* Align text to the left */
             padding: 3px; /* Remove padding */
         }
+
+        
+
     </style>
 </head>
 <body>
@@ -528,7 +573,7 @@
     <div class="content">
 
 
-        <div class="card-container" style="display: flex;">
+        <div class="card-container">
             <!-- Hydration Card -->
 
             <div class="calories-card">
@@ -540,7 +585,7 @@
                     <div>
                         <div class="calories-result" >
                             <div class="nutrition-activity">
-                                <canvas id="hydrationChart" width="100%" height="100%"></canvas>
+                                <canvas id="hydrationChart"></canvas>
                             </div>
                         </div>
 
@@ -555,13 +600,13 @@
             <div class="calories-card">
                 <div class="calories-card-content">
                     <div class="calories-heading">
-                        <img src="img/calories_logo.jpeg" alt="Calories Logo" style="width: 30px; margin-right: 15px;">
+                        <img src="img/calories_logo.jpeg" alt="Calories Logo" style="width: 15%; margin-right: 5%;">
                         <div class="heading-text">Calories</div>
                     </div>
                     <div>
                         <div class="calories-result">
                             <div class="nutrition-activity">
-                                <canvas id="nutrientDistributionChart" width="130" height="120"></canvas>
+                                <canvas id="nutrientDistributionChart"></canvas>
                             </div>
                         </div>
 
@@ -575,7 +620,7 @@
             <div class="calories-card">
                 <div class="calories-card-content">
                     <div class="calories-heading">
-                        <img src="img/health_metrics.jpeg" alt="Calories Logo" style="width: 25px; margin-right: 15px;">
+                        <img src="img/health_metrics.jpeg" alt="Calories Logo" style="width: 15%; margin-right: 5%;">
                         <div class="heading-text">Health Metrics</div>
                     </div>
                     <div>
@@ -595,13 +640,13 @@
             <div class="calories-card">
                 <div class="calories-card-content">
                     <div class="calories-heading">
-                        <img src="img/activity_logo.png" alt="activities Logo" style="width: 30px; margin-right: 15px;">
+                        <img src="img/activity_logo.png" alt="activities Logo" style="width: 15%; margin-right: 5%;">
                         <div class="heading-text">Activity</div>
                     </div>
                     <div>
                         <div class="calories-result">
                             <div class="nutrition-activity">
-                                <canvas id="activitiesChart" width="130" height="100"></canvas>
+                                <canvas id="activitiesChart"></canvas>
                             </div>
                         </div>
 
@@ -612,18 +657,18 @@
             </div>
 
         </div>
-        <div class="card-container" style="display: flex; justify-content: center;">
+        <div class="card-container">
             <div class="sleep-rhythm-chart-container">
                 <div class="activity-title">Sleep</div>
                 <div class="sleep-graph">
-                    <canvas id="sleepRhythmChart" width="130" height="100"></canvas>
+                    <canvas id="sleepRhythmChart"></canvas>
                 </div>
             </div>
 
             <div class="activity-container">
                 <div class="activity-title">Daily Steps</div>
                 <div class="activity-graph">
-                    <canvas id="activityChart" width="350" height="180"></canvas>
+                    <canvas id="activityChart"></canvas>
                 </div>
             </div>
         </div>
@@ -642,7 +687,7 @@
                         <img src="img/salad_recipe.jpeg" alt="Salad Recipe" class="recipe-image">
 
                         <div class="recipe-labels-container">
-                            <div class="recipe-label-item" style="font-size: 0.7rem; color: #333; background-color: #F9EBEA; border-radius: 5px; padding: 5px 5px; margin: 8px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); text-transform: uppercase; font-weight: bold; ">Dinner</div>
+                            <div class="recipe-label-item" style="font-size: 1rem; color: #333; background-color: #F9EBEA; border-radius: 5px; padding: 5px 5px; margin: 8px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); text-transform: uppercase; font-weight: bold; ">Dinner</div>
 
 
                         </div>
@@ -650,16 +695,16 @@
                     <div class="recipe-card-back">
                         <div class="recipe-title">Salad</div>
                         <div class="shopping-list">
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Mixed greens</div>
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Tomatoes</div>
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Cucumber</div>
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Avocado</div>
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Feta cheese</div>
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Olive oil</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Mixed greens</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Tomatoes</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Cucumber</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Avocado</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Feta cheese</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Olive oil</div>
                         </div>
                         <div class="recipe-video">
                             <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank">
-                                <img src="img/youtube_logo.png" alt="YouTube Logo" style="width: 40px; margin-right: 10px;">
+                                <img src="img/youtube_logo.png" alt="YouTube Logo" style="width: 40%; margin-right: 0%;margin-left:30%">
 
                             </a>
                         </div>
@@ -675,25 +720,25 @@
                         <img src="img/oats_recipe.jpeg" alt="Oats Recipe" class="recipe-image">
 
                         <div class="recipe-labels-container">
-                            <div class="recipe-label-item" style="font-size: 0.7rem; color: #333; background-color: #F9EBEA; border-radius: 5px; padding: 5px 5px; margin: 8px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); text-transform: uppercase; font-weight: bold;">Breakfast</div>
+                            <div class="recipe-label-item" style="font-size: 1rem; color: #333; background-color: #F9EBEA; border-radius: 5px; padding: 5px 5px; margin: 8px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); text-transform: uppercase; font-weight: bold;">Breakfast</div>
 
                         </div>
                     </div>
                     <div class="recipe-card-back">
                         <div class="recipe-title">Oats</div>
                         <div class="shopping-list">
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Rolled oats</div>
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Ripe bananas</div>
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Raisins</div>
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Peanut butter </div>
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Cinnamon</div>
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Chocolate Chips</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Rolled oats</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Ripe bananas</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Raisins</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Peanut butter </div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Cinnamon</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Chocolate Chips</div>
 
 
                         </div>
                         <div class="recipe-video">
                             <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank">
-                                <img src="img/youtube_logo.png" alt="YouTube Logo" style="width: 40px; margin-right: 10px;">
+                                <img src="img/youtube_logo.png" alt="YouTube Logo" style="width: 40%; margin-right: 0%;margin-left:30%">
 
                             </a>
                         </div>
@@ -707,22 +752,22 @@
                         <img src="img/fruits_logo.jpeg" alt="Fruits Recipe" class="recipe-image">
 
                         <div class="recipe-labels-container">
-                            <div class="recipe-label-item" style="font-size: 0.7rem; color: #333; background-color: #F9EBEA; border-radius: 5px; padding: 5px 5px; margin: 8px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); text-transform: uppercase; font-weight: bold; ">Treats</div>
+                            <div class="recipe-label-item" style="font-size: 1rem; color: #333; background-color: #F9EBEA; border-radius: 5px; padding: 5px 5px; margin: 8px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); text-transform: uppercase; font-weight: bold; ">Treats</div>
                         </div>
                     </div>
                     <div class="recipe-card-back">
                         <div class="recipe-title">Oats Cookies</div>
                         <div class="shopping-list">
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Rolled oats</div>
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Chocolate Chips </div>
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Almond Butter</div>
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Bananas</div>
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Cinnamon</div>
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Raisins</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Rolled oats</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Chocolate Chips </div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Almond Butter</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Bananas</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Cinnamon</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Raisins</div>
                         </div>
                         <div class="recipe-video">
                             <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank">
-                                <img src="img/youtube_logo.png" alt="YouTube Logo" style="width: 40px; margin-right: 10px;">
+                                <img src="img/youtube_logo.png" alt="YouTube Logo" style="width: 40%; margin-right: 0%;margin-left:30%">
 
                             </a>
                         </div>
@@ -737,24 +782,24 @@
                         <img src="img/avocado_recipe.jpeg" alt="Avocado Recipe" class="recipe-image">
 
                         <div class="recipe-labels-container">
-                            <div class="recipe-label-item" style="font-size: 0.7rem; color: #333; background-color: #F9EBEA; border-radius: 5px; padding: 5px 5px; margin: 8px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); text-transform: uppercase; font-weight: bold; ">Lunch</div>
+                            <div class="recipe-label-item" style="font-size: 1rem; color: #333; background-color: #F9EBEA; border-radius: 5px; padding: 5px 5px; margin: 8px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); text-transform: uppercase; font-weight: bold; ">Lunch</div>
                         </div>
                     </div>
                     <div class="recipe-card-back">
                         <div class="recipe-title">Avocado Toast</div>
                         <div class="shopping-list">
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Avocados</div>
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Bread </div>
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Red onion</div>
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Fresh cilantro</div>
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Lime</div>
-                            <div class="shopping-list-item" style="font-size: 0.7rem;">Feta cheese</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Avocados</div>
+                            <div class="shopping-list-item" style="font-size:1rem;">Bread </div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Red onion</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Fresh cilantro</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Lime</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Feta cheese</div>
 
 
                         </div>
                         <div class="recipe-video">
                             <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank">
-                                <img src="img/youtube_logo.png" alt="YouTube Logo" style="width: 40px; margin-right: 10px;">
+                                <img src="img/youtube_logo.png" alt="YouTube Logo" style="width: 40%; margin-right: 0%;margin-left:30%">
 
                             </a>
                         </div>
@@ -878,6 +923,11 @@
         };
 
         // Create sleep rhythm bar chart
+
+        var canvas = document.getElementById('sleepRhythmChart');
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+
         const ctx = document.getElementById('sleepRhythmChart').getContext('2d');
         const sleepRhythmChart = new Chart(ctx, {
             type: 'bar',
@@ -896,6 +946,10 @@
                 borderWidth: 2
             }]
         };
+
+        var canvas = document.getElementById('activityChart');
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
 
         var ctxActivity = document.getElementById('activityChart').getContext('2d');
 
@@ -921,7 +975,7 @@
                     'rgba(54, 162, 235, 1)',  // Protein border color
                     'rgba(255, 206, 86, 1)'   // Fats border color
                 ],
-                borderWidth: 0.9
+                borderWidth: 1
             }]
         };
 
@@ -971,6 +1025,10 @@
             }
         };
 
+        var canvas = document.getElementById('nutrientDistributionChart');
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+
         // Create nutrient distribution donut chart
         const ctxNutrient = document.getElementById('nutrientDistributionChart').getContext('2d');
         const nutrientDistributionChart = new Chart(ctxNutrient, {
@@ -978,6 +1036,8 @@
             data: nutrientData,
             options: nutrientDistributionOptions,
         });
+
+        
 
         // Sample data for activities pie chart
         const activitiesData = {
@@ -1018,6 +1078,10 @@
             },
         };
 
+        var canvas = document.getElementById('activitiesChart');
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+
         // Create activities pie chart
         const ctxActivities = document.getElementById('activitiesChart').getContext('2d');
         const activitiesChart = new Chart(ctxActivities, {
@@ -1030,16 +1094,20 @@
         var hydrationData = {
             labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
             datasets: [{
-                label: 'Hydration %',
+                label: '',
                 data: [80, 40, 60, 55, 70, 35, 60], // Example data (replace with actual data)
                 borderColor: 'rgba(54, 162, 235, 0.9)',
                 backgroundColor: 'rgba(54, 162, 235, 0.2)', // Background color for the area below the line
                 borderWidth: 1,
                 fill: true, // Fill the area under the line
-                pointRadius: 0 // Set the size of data points (markers)
+                pointRadius: 0, // Set the size of data points (markers)
+                borderWidth: 0.9,
             }]
         };
 
+        var canvas = document.getElementById('hydrationChart');
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
         var ctxHydration = document.getElementById('hydrationChart').getContext('2d');
 
         // Create the line chart
@@ -1047,6 +1115,11 @@
             type: 'line',
             data: hydrationData,
             options: {
+                elements: {
+                    line: {
+                        borderWidth: 0 // Set border width of the line to 0
+                    }
+                },
                 scales: {
                     y: {
                         beginAtZero: true, // Start the y-axis at zero
@@ -1063,7 +1136,7 @@
                     legend: {
                         labels: {
                             fontSize: 10, // Adjust the font size of the legend labels
-                            boxWidth: 10
+                            boxWidth: 0
                         }
                     }
                 }
