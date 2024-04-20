@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Poses Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2%;
+            background-color: #f3f3f3;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2%;
+            margin-top: 2%;
+        }
+
+        .card {
+            width: 20%; /* Three cards in a row with spacing */
+            padding: 1%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+            .card img {
+                width: 90%;
+                height: 60%;
+                padding: 1%;
+                margin-bottom: 2%;
+                border-radius: 10px;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+
+            .card:hover img {
+                transform: scale(1.05);
+            }
+
+            .card h2 {
+                margin-top: 1%;
+                font-size: 1.5rem;
+                margin-bottom: 1%;
+                color: #333333;
+            }
+
+            .card p {
+                font-size: 1rem;
+                margin-bottom: 1%;
+                color: #666666;
+            }
+
+        header {
+            text-align: center;
+            margin-bottom: 2%;
+        }
+
+            header h1 {
+                font-size: 2.5rem;
+                color: #333333;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Discover Yoga Poses</h1>
+    </header>
+
+    <div class="card-container">
+        <div class="card">
+            <img src="img/goddess_pose.jpeg" alt="Goddess Pose">
+            <h2>Goddess Pose</h2>
+            <p>Timing: 1 minute</p>
+        </div>
+
+        <div class="card">
+            <img src="img/bow_pose.jpeg" alt="Bow Pose">
+            <h2>Bow Pose</h2>
+            <p>Timing: 30 seconds each side</p>
+        </div>
+
+        <div class="card">
+            <img src="img/cobra_pose.jpeg" alt="Cobra Pose">
+            <h2>Cobra Pose</h2>
+            <p>Timing: 2 minutes</p>
+        </div>
+
+        <div class="card">
+            <img src="img/pigeon_pose.jpeg" alt="Pigeon Pose">
+            <h2>Pigeon Pose</h2>
+            <p>Timing: 1 minute each side</p>
+        </div>
+
+        <div class="card">
+            <img src="img/downward_dog_pose.jpeg" alt="Downward Dog Pose">
+            <h2>Downward Dog</h2>
+            <p>Timing: 30 seconds</p>
+        </div>
+
+        <div class="card">
+            <img src="img/camel_pose.jpeg" alt="Camel Pose">
+            <h2>Camel Pose</h2>
+            <p>Timing: 1 minute</p>
+        </div>
+
+        <div class="card">
+            <img src="img/bridge_pose.jpeg" alt="Bridge Pose">
+            <h2>Bridge Pose</h2>
+            <p>Timing: 30 seconds</p>
+        </div>
+
+        <div class="card">
+            <img src="img/triangle_pose.jpeg" alt="Triangle Pose">
+            <h2>Triangle Pose</h2>
+            <p>Timing: 30 seconds each side</p>
+        </div>
+
+        <div class="card">
+            <img src="img/warrior_pose.jpeg" alt="Warrior Pose">
+            <h2>Warrior Pose</h2>
+            <p>Timing: 1 minute each side</p>
+        </div>
+
+        <div class="card">
+            <img src="img/seated_twists_pose.jpeg" alt="Seated Twists Pose">
+            <h2>Seated Twists</h2>
+            <p>Timing: 1 minute</p>
+        </div>
+    </div>
+
+</body>
+</html>
