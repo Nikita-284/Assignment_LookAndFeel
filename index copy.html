@@ -127,7 +127,7 @@ body, html {
             <div class="col m6">
                 <h2 style="font-weight: 500;">We know you better.</h2>
                 <p>Discover trends, track progress, and embark on your journey to optimized well-being. Let's embark on this wellness adventure together!</p>
-                <h5><a href="#work" class="button black"><i class="fa fa-th"> </i> MyFIT Dashboard</a></h5>
+                <h5><a href="myfit.html" class="button black"><i class="fa fa-th"> </i> MyFIT Dashboard</a></h5>
             </div>
             <div class="col m6" style="text-align: center;">
                 <img class="image round-large" style="width:50%;height:50%;" src="https://static.vecteezy.com/system/resources/previews/008/936/978/original/modern-fitness-tracker-concept-background-isometric-style-vector.jpg" alt="MyFIT">
@@ -171,7 +171,6 @@ body, html {
     </section>
     <!-- new banner -->
     <!-- new banner -->
-
     <!--<section class="section about" aria-label="about" id="about" data-section">
         <div style="display: grid;
         grid-template-columns: 0.7fr 1fr;
@@ -207,7 +206,6 @@ body, html {
 
         </div>
     </section>-->
-
     <!-- new banner -->
     <!-- Team Section -->
     <div class="container" style="padding:80px 100px" id="team">
@@ -223,7 +221,7 @@ body, html {
                         <h3>Rich Froning</h3>
                         <p class="opacity">CrossFit Specialist</p>
                         <p>Renowned CrossFit athlete with multiple championship titles and a reputation for exceptional training methodologies.</p>
-                        <p><button class="button light-grey block"><i class="fa fa-envelope"></i> Contact</button></p>
+                        <p><button class="button light-grey block" onclick="scrollToContact()"><i class="fa fa-envelope"></i> Contact</button></p>
                     </div>
                 </div>
             </div>
@@ -234,7 +232,7 @@ body, html {
                         <h3>Dr. Rhonda Patrick</h3>
                         <p class="opacity">Nutrition Specialist</p>
                         <p>Renowned biochemist known for her expertise in nutrition and has coached countless individuals towards health and wellness.</p>
-                        <p><button class="button light-grey block"><i class="fa fa-envelope"></i> Contact</button></p>
+                        <p><button class="button light-grey block" onclick="scrollToContact()"><i class="fa fa-envelope"></i> Contact</button></p>
                     </div>
                 </div>
             </div>
@@ -245,7 +243,7 @@ body, html {
                         <h3>Gabrielle Bernstein</h3>
                         <p class="opacity">Mind-Body Transformation Coach</p>
                         <p>Bestselling author and motivational speaker, specializing in mindfulness, meditation, and personal growth.</p>
-                        <p><button class="button light-grey block"><i class="fa fa-envelope"></i> Contact</button></p>
+                        <p><button class="button light-grey block" onclick="scrollToContact()"><i class="fa fa-envelope"></i> Contact</button></p>
                     </div>
                 </div>
             </div>
@@ -256,7 +254,7 @@ body, html {
                         <h3>Mark Rippetoe</h3>
                         <p class="opacity">Strength Training Guru</p>
                         <p>Leading strength training coach, author of "Starting Strength," and recognized authority in the barbell training and strength development.</p>
-                        <p><button class="button light-grey block"><i class="fa fa-envelope"></i> Contact</button></p>
+                        <p><button class="button light-grey block" onclick="scrollToContact()"><i class="fa fa-envelope"></i> Contact</button></p>
                     </div>
                 </div>
             </div>
@@ -284,7 +282,7 @@ body, html {
     </div>
 
 
-     <!--Work Section--> 
+    <!--Work Section-->
     <!--<div class="container" style="padding:128px 16px" id="work">
         <h3 class="center">OUR WORK</h3>
         <p class="center large">What we've done for people</p>
@@ -304,8 +302,6 @@ body, html {
             </div>
         </div>
     </div>-->
-
-
     <!-- Modal for full size images on click-->
     <div id="modal01" class="modal black" onclick="this.style.display='none'">
         <span class="button xxlarge black padding-large display-topright" title="Close Modal Image">×</span>
@@ -502,5 +498,13 @@ body, html {
             mySidebar.style.display = "none";
         }
     </script>
+
+    <script>
+        function scrollToContact() {
+            var contactSection = document.getElementById("contact");
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
 </body>
 </html>
