@@ -11,81 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        body, h1, h2, h3, h4, h5, h6 {
-            font-family: "Poppins", sans-serif;
-            font-weight: 300;
-            font-style: normal;
-        }
-
-        body, html {
-            height: 100%;
-            line-height: 1.8;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(48,25,52,0.75);
-        }
-
-        /* Our Values Section Styles */
-        #values-container {
-            background-color: #f2f2f2; /* Light gray background */
-            padding: 50px 0;
-            display: flex;
-            flex-direction: column; /* Display values top to bottom */
-            justify-content: center; /* Center content horizontally */
-            align-items: center; /* Center content vertically */
-        }
-
-        #values {
-            display: flex;
-            flex-direction: row; /* Display values side by side */
-            justify-content: center; /* Center values horizontally */
-            align-items: center; /* Center values vertically */
-            flex-wrap: wrap; /* Allow values to wrap to next row if space is insufficient */
-            margin-top: 20px; /* Add space between values and heading */
-        }
-
-        .value {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0 20px; /* Add space between values */
-            text-align: center;
-        }
-
-            .value img {
-                width: 150px;
-                height: auto;
-                margin-bottom: 10px;
-            }
-
-        .value-text {
-            max-width: 300px;
-        }
-
-        h2 {
-            font-weight: 500;
-            text-align: center; /* Center align the heading */
-            margin-bottom: 20px; /* Add space below the heading */
-        }
-
-        /* Adjusting column width for medium screens */
-        @media screen and (max-width: 992px) {
-            .col.m6 {
-                width: 50%;
-                float: left;
-            }
-        }
-    </style>
+    
 </head>
 <body>
-    <!-- Navbar (sit on top) -->
     <div class="top">
         <div class="bar white card" id="myNavbar">
             <a href="index.html" class="bar-item button wide">FIT.CO</a>
@@ -93,8 +21,8 @@
             <div class="right hide-small">
                 <a href="index.html" class="bar-item button">HOME</a>
                 <a href="myfit.html" class="bar-item button"><i class="fa fa-th"></i> MyFIT</a>
+                <a href="signup.html" class="bar-item button"> SIGN UP</a>
                 <a href="aboutus.html" class="bar-item button"> ABOUT US</a>
-
                 <a href="#contact" class="bar-item button"><i class="fa fa-envelope"></i> CONTACT</a>
             </div>
             <!-- Hide right-floated links on small screens and replace them with a menu icon -->
@@ -108,80 +36,51 @@
         <a href="javascript:void(0)" onclick="w3_close()" class="bar-item button large padding-16">Close ×</a>
         <a href="index.html" onclick="w3_close()" class="bar-item button">HOME</a>
         <a href="myfit.html" onclick="w3_close()" class="bar-item button">MyFIT</a>
+        <a href="signup.html" onclick="w3_close()" class="bar-item button">SIGN UP</a>
         <a href="aboutus.html" onclick="w3_close()" class="bar-item button">ABOUT US</a>
         <a href="#contact" onclick="w3_close()" class="bar-item button">CONTACT</a>
+        
     </nav>
 
-    <!-- First Section ("Join Us") -->
-    <div class="container" style="padding: 180px 200px; background-image: url('https://github.com/Nikita-284/Assignment_LookAndFeel/raw/master/img/joinus9.jpg'); background-size: cover; background-position: center; text-align: left;">
-        <h2 style="font-weight: 500; color: white; text-align: left;">JOIN US</h2>
+    <div class="container light-grey" style="padding:80px 80px" id="contact">
+        <h3 class="center">Sign Up here</h3>
+        
+        <div style="margin-top:10px">
+         
+            <br>
+            <div style="width:100%;">
+                <p><input class="input border" type="text" placeholder="Name" required name="Name"></p>
+                <p><input class="input border" type="text" placeholder="Email" required name="Email"></p>
+                
+                <p><input class="input border" type="text" placeholder="Mobile" required name="Mobile"></p>
+                <p><input class="input border" type="text" placeholder="Height" required name="Mobile"></p>
+                <p><input class="input border" type="text" placeholder="Weight" required name="Mobile"></p>
+                <p><input class="input border" type="text" placeholder="Age" required name="Mobile"></p>
+                <p>
+                    <button class="button black" onclick="showContact()">
+                        <i class="fa fa-paper-plane"></i> Sign Up
+                    </button>
+                </p>
+            </div>
+                <h4 id="ContactMsg" style="color: red;border: 1px red solid;display: none;padding:8px">Thankyou! Our team will contact you soon.</h4>
+                
+            
+
+        </div>
     </div>
+     <!-- Footer -->
+     <footer class="center black padding-64">
+        <a href="#top" class="button light-grey"><i class="fa fa-arrow-up margin-right"></i>To the top</a>
+        <div class="xlarge section" style="padding: 20px;">
+            <i class="fa fa-facebook-official hover-opacity"></i>
+            <i class="fa fa-instagram hover-opacity"></i>
+            <i class="fa fa-snapchat hover-opacity"></i>
+            <i class="fa fa-pinterest-p hover-opacity"></i>
+            <i class="fa fa-twitter hover-opacity"></i>
+            <i class="fa fa-linkedin hover-opacity"></i>
+        </div>
+        <p>Copyright 2024. Fit.co</p>
+    </footer>
+</body>
 
-    <!-- Second Section Heading -->
-    <div class="container" style="padding: 20px 100px; background-color: #f2f2f2; text-align: center;">
-        <h2 style="font-weight: 500;">Fill out the form below to start something better !!!</h2>
-    </div>
-
-    <!-- First Form -->
-    <div class="container" style="padding: 50px 100px; background-color: #f2f2f2; text-align: center;">
-        <form id="first-form" action="submit_first_form.php" method="post" style="max-width: 400px; margin: 0 auto;">
-            <label for="name" style="font-weight: bold;">Name:</label><br>
-            <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;"><br>
-
-            <label for="email" style="font-weight: bold;">Email:</label><br>
-            <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;"><br>
-
-            <label for="phone" style="font-weight: bold;">Phone Number:</label><br>
-            <input type="tel" id="phone" name="phone" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;"><br>
-
-            <input type="submit" value="Submit" style="background-color: #4CAF50; color: white; padding: 14px 20px; margin-top: 20px; border: none; border-radius: 5px; cursor: pointer;">
-        </form>
-    </div>
-
-    <!-- Confirmation Message -->
-    <div class="container" style="padding: 50px 100px; display: none; text-align: center;" id="confirmation-message">
-        <p>Thanks for the information! Just a few more things before we can begin.</p>
-    </div>
-
-    <!-- Second Form -->
-    <div class="container" style="padding: 50px 100px; background-color: #f2f2f2; text-align: center; display: none;" id="second-form-container">
-        <form id="second-form" action="submit_second_form.php" method="post" style="max-width: 400px; margin: 0 auto;">
-            <label for="height" style="font-weight: bold;">Height:</label><br>
-            <input type="text" id="height" name="height" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;"><br>
-
-            <label for="weight" style="font-weight: bold;">Weight:</label><br>
-            <input type="text" id="weight" name="weight" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;"><br>
-
-            <label for="age" style="font-weight: bold;">Age:</label><br>
-            <input type="text" id="age" name="age" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;"><br>
-
-            <label for="plan" style="font-weight: bold;">Plan Interested In:</label><br>
-            <select id="plan" name="plan" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;">
-                <option value="Basic">Basic</option>
-                <option value="Premium">Premium</option>
-                <option value="Ultimate">Ultimate</option>
-            </select><br>
-
-            <input type="submit" value="Submit" style="background-color: #4CAF50; color: white; padding: 14px 20px; margin-top: 20px; border: none; border-radius: 5px; cursor: pointer;">
-        </form>
-    </div>
-
-    <!-- JavaScript to handle form submission and display second form after submitting first form -->
-    <script>
-document.getElementById("first-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent default form submission
-    // You can add form validation here if needed
-    document.getElementById("first-form").style.display = "none"; // Hide first form
-    document.getElementById("confirmation-message").style.display = "block"; // Display confirmation message
-    document.getElementById("second-form-container").style.display = "block"; // Display second form
-});
-
-document.getElementById("second-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent default form submission
-    // You can add form validation here if needed
-    window.location.href = "index.html"; // Redirect to homepage after form submission
-    alert("Thanks for the details! One of our representatives will reach out to you shortly. In the meanwhile, explore our website."); // Display confirmation message
-});
-    </script>
-    </body>
 </html>
