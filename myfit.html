@@ -232,9 +232,14 @@
         }
 
         .hydration-card-content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            background-color: #FDEBD0; /* Light blue background */
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 1%;
+            margin-left: 0.7%;
+            flex-shrink: 0;
+            width: 14%; /* Adjusted width to match hydration card */
         }
 
         .hydration-heading {
@@ -268,9 +273,9 @@
 
         .hydration-button {
             padding: 1px 1px;
-            width: 30px;
+            width: 35px;
             border: none;
-            border-radius: 5px;
+            border-radius: 3px;
             background-color: #4CAF50; /* Green color */
             color: white;
             margin-right: 1%;
@@ -359,7 +364,7 @@
             
             width: 19.3%;
             height: 200px;
-            margin-bottom: 2%;
+            margin-bottom: 0%;
             margin-left: 2%;
             margin-top: 1%;
             perspective: 1000px;
@@ -564,8 +569,9 @@
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             margin-top: 1%;
             margin-left: 1%;
+            margin-right: 0.5%;
             flex-shrink: 0;
-            width: 23%; /* Adjusted width to match hydration card */
+            width: 14%; /* Adjusted width to match hydration card */
         }
 
         .meal-content {
@@ -601,7 +607,7 @@
             padding: 1px 1px;
             width: 50px;
             border: none;
-            border-radius: 5px;
+            border-radius: 3px;
             background-color: #4CAF50; /* Green color */
             color: white;
             cursor: pointer;
@@ -623,7 +629,56 @@
             width: 100%;
         }
 
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
 
+        table {
+            width: 90%;
+            border-collapse: collapse;
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-top: 2%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+            th:last-child, td:last-child {
+                text-align: center;
+            }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .delete-button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            .delete-button:hover {
+                background-color: #d32f2f;
+            }
         
 
     </style>
@@ -758,65 +813,60 @@
                 </div>
             </div>
         </div>
-    <div class="content">
-        <div class="cards-container">
 
-    <div class="hydration-card">
-        <div class="hydration-card-content">
-            <div class="hydration-heading">
-                <div class="heading-text">Hydration</div>
-            </div>
-            <div class="hydration-input-container">
-                <input type="number" id="waterAmount" class="hydration-input" placeholder="Enter water amount (in liters)">
-                <button onclick="logWaterIntake()" class="hydration-button">Log</button>
-            </div>
-            <div id="hydrationResult" class="hydration-result"></div>
+        <div style="margin-top: 1%; margin-bottom: 1%; width: 350px; background-color: #FADBD8; color: #000; margin: 0 auto; text-align: center; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); letter-spacing: 1px; margin-top: 1%;">
+            <h2 style="margin: 0; font-size: 1.2rem; font-weight: bold;">Log your Intakes</h2>
         </div>
-    </div>
 
-    <div class="meal-log">
-        <div class="meal">
-            <div class="meal-heading">Breakfast</div>
-            <div class="meal-input-container">
-                <input type="number" id="breakfastCalories" class="meal-input" placeholder="Enter calories">
-                <button onclick="logMeal('breakfast')" class="meal-button">Log</button>
+        <div class="card-container">
+            <div class="meal">
+                <div class="meal-heading">Breakfast</div>
+                <div class="meal-input-container">
+                    <input type="number" id="breakfastCalories" class="meal-input" placeholder="Enter">
+                    <button onclick="logMeal('breakfast')" class="meal-button">Log</button>
+                </div>
+                <div id="breakfastCalorieStatus" class="calories-output"></div>
             </div>
-            <div id="breakfastCalorieStatus" class="calories-output"></div>
-        </div>
-        <div class="meal">
-            <div class="meal-heading">Lunch</div>
-            <div class="meal-input-container">
-                <input type="number" id="lunchCalories" class="meal-input" placeholder="Enter calories">
-                <button onclick="logMeal('lunch')" class="meal-button">Log</button>
+            <div class="meal">
+                <div class="meal-heading">Lunch</div>
+                <div class="meal-input-container">
+                    <input type="number" id="lunchCalories" class="meal-input" placeholder="Enter">
+                    <button onclick="logMeal('lunch')" class="meal-button">Log</button>
+                </div>
+                <div id="lunchCalorieStatus" class="calories-output"></div>
             </div>
-            <div id="lunchCalorieStatus" class="calories-output"></div>
-        </div>
-        <div class="meal">
-            <div class="meal-heading">Snack</div>
-            <div class="meal-input-container">
-                <input type="number" id="snackCalories" class="meal-input" placeholder="Enter calories">
-                <button onclick="logMeal('snack')" class="meal-button">Log</button>
+            <div class="meal">
+                <div class="meal-heading">Snack</div>
+                <div class="meal-input-container">
+                    <input type="number" id="snackCalories" class="meal-input" placeholder="Enter">
+                    <button onclick="logMeal('snack')" class="meal-button">Log</button>
+                </div>
+                <div id="snackCalorieStatus" class="calories-output"></div>
             </div>
-            <div id="snackCalorieStatus" class="calories-output"></div>
-        </div>
-        <div class="meal">
-            <div class="meal-heading">Dinner</div>
-            <div class="meal-input-container">
-                <input type="number" id="dinnerCalories" class="meal-input" placeholder="Enter calories">
-                <button onclick="logMeal('dinner')" class="meal-button">Log</button>
+            <div class="meal">
+                <div class="meal-heading">Dinner</div>
+                <div class="meal-input-container">
+                    <input type="number" id="dinnerCalories" class="meal-input" placeholder="Enter">
+                    <button onclick="logMeal('dinner')" class="meal-button">Log</button>
+                </div>
+                <div id="dinnerCalorieStatus" class="calories-output"></div>
             </div>
-            <div id="dinnerCalorieStatus" class="calories-output"></div>
-        </div>
-    </div>
+            <div class="hydration-card-content">
+                <div class="hydration-heading">
+                    <div class="heading-text">Hydration</div>
+                </div>
+                <div class="hydration-input-container">
+                    <input type="number" id="waterAmount" class="hydration-input" placeholder="Enter">
+                    <button onclick="logWaterIntake()" class="hydration-button">Log</button>
+                </div>
+                <div id="hydrationResult" class="hydration-result"></div>
+            </div>
 
         </div>
-    </div>
 
-        <div style="margin-top: 1px; margin-bottom: 1px; width: 350px; background-color: #FADBD8; color: #000; margin: 0 auto; text-align: center; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); letter-spacing: 1px; ">
+        <div style="margin-top: 1%; margin-bottom: 1%; width: 350px; background-color: #FADBD8; color: #000; margin: 0 auto; text-align: center; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); letter-spacing: 1px; margin-top: 1%;">
             <h2 style="margin: 0; font-size: 1.2rem; font-weight: bold;">Healthy Meal Plan for Today</h2>
         </div>
-
-
 
         <div class="cards-container">
 
@@ -948,8 +998,51 @@
 
         </div>
 
-    </div>
+        <div style="margin-top: 1%; margin-bottom: 1%; width: 350px; background-color: #FADBD8; color: #000; margin: 0 auto; text-align: center; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); letter-spacing: 1px; margin-top: 1%;">
+            <h2 style="margin: 0; font-size: 1.2rem; font-weight: bold;">Your Intake history</h2>
+        </div>
 
+        <div class="card-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Meal</th>
+                        <th>Amount (in Liters / Calories)</th>
+                        <th>Date & Time</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Breakfast</td>
+                        <td>500 Calories</td>
+                        <td>2024-04-15 08:00 AM</td>
+                        <td><button class="delete-button">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Lunch</td>
+                        <td>1100 Calories</td>
+                        <td>2024-04-15 2:00 PM</td>
+                        <td><button class="delete-button">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Dinner</td>
+                        <td>700 Calories</td>
+                        <td>2024-04-15 08:00 PM</td>
+                        <td><button class="delete-button">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Hydration</td>
+                        <td>4</td>
+                        <td>2024-04-15 09:00 PM</td>
+                        <td><button class="delete-button">Delete</button></td>
+                    </tr>
+                    <!-- Add more rows here -->
+                </tbody>
+            </table>
+        </div>
+
+        </div>
 
         <div class="right-sidebar">
             <div class="user-profile">
