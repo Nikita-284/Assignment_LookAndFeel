@@ -113,12 +113,10 @@
     </nav>
 
     <!-- First Section ("Join Us") -->
-    <div class="container" style="padding: 150px 100px; background-image: url('https://github.com/Nikita-284/Assignment_LookAndFeel/raw/master/img/banner_1.jpeg'); background-size: cover; background-position: center; text-align: left;">
+    <div class="container" style="padding: 180px 200px; background-image: url('https://github.com/Nikita-284/Assignment_LookAndFeel/raw/master/img/joinus9.jpg'); background-size: cover; background-position: center; text-align: left;">
         <h2 style="font-weight: 500; color: white; text-align: left;">JOIN US</h2>
-        <p style="color: white; text-align: left;">Fill out the form below to start something better !!!</p>
     </div>
 
-  
     <!-- Second Section Heading -->
     <div class="container" style="padding: 20px 100px; background-color: #f2f2f2; text-align: center;">
         <h2 style="font-weight: 500;">Fill out the form below to start something better !!!</h2>
@@ -126,17 +124,17 @@
 
     <!-- First Form -->
     <div class="container" style="padding: 50px 100px; background-color: #f2f2f2; text-align: center;">
-        <form id="first-form" action="submit_first_form.php" method="post">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
+        <form id="first-form" action="submit_first_form.php" method="post" style="max-width: 400px; margin: 0 auto;">
+            <label for="name" style="font-weight: bold;">Name:</label><br>
+            <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;"><br>
 
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
+            <label for="email" style="font-weight: bold;">Email:</label><br>
+            <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;"><br>
 
-            <label for="phone">Phone Number:</label><br>
-            <input type="tel" id="phone" name="phone" required><br><br>
+            <label for="phone" style="font-weight: bold;">Phone Number:</label><br>
+            <input type="tel" id="phone" name="phone" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;"><br>
 
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" style="background-color: #4CAF50; color: white; padding: 14px 20px; margin-top: 20px; border: none; border-radius: 5px; cursor: pointer;">
         </form>
     </div>
 
@@ -147,24 +145,24 @@
 
     <!-- Second Form -->
     <div class="container" style="padding: 50px 100px; background-color: #f2f2f2; text-align: center; display: none;" id="second-form-container">
-        <form id="second-form" action="submit_second_form.php" method="post">
-            <label for="height">Height:</label><br>
-            <input type="text" id="height" name="height" required><br><br>
+        <form id="second-form" action="submit_second_form.php" method="post" style="max-width: 400px; margin: 0 auto;">
+            <label for="height" style="font-weight: bold;">Height:</label><br>
+            <input type="text" id="height" name="height" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;"><br>
 
-            <label for="weight">Weight:</label><br>
-            <input type="text" id="weight" name="weight" required><br><br>
+            <label for="weight" style="font-weight: bold;">Weight:</label><br>
+            <input type="text" id="weight" name="weight" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;"><br>
 
-            <label for="age">Age:</label><br>
-            <input type="text" id="age" name="age" required><br><br>
+            <label for="age" style="font-weight: bold;">Age:</label><br>
+            <input type="text" id="age" name="age" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;"><br>
 
-            <label for="plan">Plan Interested In:</label><br>
-            <select id="plan" name="plan" required>
+            <label for="plan" style="font-weight: bold;">Plan Interested In:</label><br>
+            <select id="plan" name="plan" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px;">
                 <option value="Basic">Basic</option>
                 <option value="Premium">Premium</option>
                 <option value="Ultimate">Ultimate</option>
-            </select><br><br>
+            </select><br>
 
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" style="background-color: #4CAF50; color: white; padding: 14px 20px; margin-top: 20px; border: none; border-radius: 5px; cursor: pointer;">
         </form>
     </div>
 
@@ -185,6 +183,5 @@ document.getElementById("second-form").addEventListener("submit", function(event
     alert("Thanks for the details! One of our representatives will reach out to you shortly. In the meanwhile, explore our website."); // Display confirmation message
 });
     </script>
-
     </body>
 </html>
