@@ -392,7 +392,7 @@ body, html {
 
 
     <!-- Contact Section -->
-    <div class="container light-grey" style="padding:80px 250px" id="contact">
+    <div class="container light-grey" style="padding:80px 100px" id="contact">
         <h3 class="center">CONTACT</h3>
         <p class="center large">Lets get in touch. Send us a message:</p>
         <div style="margin-top:48px">
@@ -400,16 +400,18 @@ body, html {
             <p><i class="fa fa-phone fa-fw xxlarge margin-right"></i> Phone: (813) 661-0033</p>
             <p><i class="fa fa-envelope fa-fw xxlarge margin-right"> </i> Email: fitco@mail.com</p>
             <br>
-            <form action="/action_page.php" target="_blank">
+            <form>
                 <p><input class="input border" type="text" placeholder="Name" required name="Name"></p>
                 <p><input class="input border" type="text" placeholder="Email" required name="Email"></p>
                 <p><input class="input border" type="text" placeholder="Subject" required name="Subject"></p>
                 <p><input class="input border" type="text" placeholder="Message" required name="Message"></p>
                 <p>
-                    <button class="button black" type="submit">
+                    <button class="button black" onclick="">
                         <i class="fa fa-paper-plane"></i> SEND MESSAGE
                     </button>
                 </p>
+                <h4 style="color: red;border: 1px red solid;display: none;padding:8px">Thankyou! Our team will contact you soon.</h4>
+                
             </form>
 
         </div>
