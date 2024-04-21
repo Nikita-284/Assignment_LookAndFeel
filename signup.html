@@ -1,3 +1,190 @@
+<!DOCTYPE html>
 <html>
+<head>
+    <title>Fit.co</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        body, html {
+            height: 100%;
+            line-height: 1.8;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(48,25,52,0.75);
+        }
+
+        /* Our Values Section Styles */
+        #values-container {
+            background-color: #f2f2f2; /* Light gray background */
+            padding: 50px 0;
+            display: flex;
+            flex-direction: column; /* Display values top to bottom */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+        }
+
+        #values {
+            display: flex;
+            flex-direction: row; /* Display values side by side */
+            justify-content: center; /* Center values horizontally */
+            align-items: center; /* Center values vertically */
+            flex-wrap: wrap; /* Allow values to wrap to next row if space is insufficient */
+            margin-top: 20px; /* Add space between values and heading */
+        }
+
+        .value {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 20px; /* Add space between values */
+            text-align: center;
+        }
+
+            .value img {
+                width: 150px;
+                height: auto;
+                margin-bottom: 10px;
+            }
+
+        .value-text {
+            max-width: 300px;
+        }
+
+        h2 {
+            font-weight: 500;
+            text-align: center; /* Center align the heading */
+            margin-bottom: 20px; /* Add space below the heading */
+        }
+
+        /* Adjusting column width for medium screens */
+        @media screen and (max-width: 992px) {
+            .col.m6 {
+                width: 50%;
+                float: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar (sit on top) -->
+    <div class="top">
+        <div class="bar white card" id="myNavbar">
+            <a href="index.html" class="bar-item button wide">FIT.CO</a>
+            <!-- Right-sided navbar links -->
+            <div class="right hide-small">
+                <a href="index.html" class="bar-item button">HOME</a>
+                <a href="myfit.html" class="bar-item button"><i class="fa fa-th"></i> MyFIT</a>
+                <a href="aboutus.html" class="bar-item button"> ABOUT US</a>
+
+                <a href="#contact" class="bar-item button"><i class="fa fa-envelope"></i> CONTACT</a>
+            </div>
+            <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+            <a href="javascript:void(0)" class="bar-item button right hide-large hide-medium" onclick="w3_open()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+    <!-- Sidebar on small screens when clicking the menu icon -->
+    <nav class="sidebar bar-block black card animate-left hide-medium hide-large" style="display:none" id="mySidebar">
+        <a href="javascript:void(0)" onclick="w3_close()" class="bar-item button large padding-16">Close ×</a>
+        <a href="index.html" onclick="w3_close()" class="bar-item button">HOME</a>
+        <a href="myfit.html" onclick="w3_close()" class="bar-item button">MyFIT</a>
+        <a href="aboutus.html" onclick="w3_close()" class="bar-item button">ABOUT US</a>
+        <a href="#contact" onclick="w3_close()" class="bar-item button">CONTACT</a>
+    </nav>
+
+    <!-- First Section ("Join Us") -->
+    <div class="container" style="padding: 150px 100px; background-image: url('https://github.com/Nikita-284/Assignment_LookAndFeel/raw/master/img/banner_1.jpeg'); background-size: cover; background-position: center; text-align: left;">
+        <h2 style="font-weight: 500; color: white; text-align: left;">JOIN US</h2>
+        <p style="color: white; text-align: left;">Fill out the form below to start something better !!!</p>
+    </div>
+
   
+    <!-- Second Section Heading -->
+    <div class="container" style="padding: 20px 100px; background-color: #f2f2f2; text-align: center;">
+        <h2 style="font-weight: 500;">Fill out the form below to start something better !!!</h2>
+    </div>
+
+    <!-- First Form -->
+    <div class="container" style="padding: 50px 100px; background-color: #f2f2f2; text-align: center;">
+        <form id="first-form" action="submit_first_form.php" method="post">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="phone">Phone Number:</label><br>
+            <input type="tel" id="phone" name="phone" required><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <!-- Confirmation Message -->
+    <div class="container" style="padding: 50px 100px; display: none; text-align: center;" id="confirmation-message">
+        <p>Thanks for the information! Just a few more things before we can begin.</p>
+    </div>
+
+    <!-- Second Form -->
+    <div class="container" style="padding: 50px 100px; background-color: #f2f2f2; text-align: center; display: none;" id="second-form-container">
+        <form id="second-form" action="submit_second_form.php" method="post">
+            <label for="height">Height:</label><br>
+            <input type="text" id="height" name="height" required><br><br>
+
+            <label for="weight">Weight:</label><br>
+            <input type="text" id="weight" name="weight" required><br><br>
+
+            <label for="age">Age:</label><br>
+            <input type="text" id="age" name="age" required><br><br>
+
+            <label for="plan">Plan Interested In:</label><br>
+            <select id="plan" name="plan" required>
+                <option value="Basic">Basic</option>
+                <option value="Premium">Premium</option>
+                <option value="Ultimate">Ultimate</option>
+            </select><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <!-- JavaScript to handle form submission and display second form after submitting first form -->
+    <script>
+document.getElementById("first-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+    // You can add form validation here if needed
+    document.getElementById("first-form").style.display = "none"; // Hide first form
+    document.getElementById("confirmation-message").style.display = "block"; // Display confirmation message
+    document.getElementById("second-form-container").style.display = "block"; // Display second form
+});
+
+document.getElementById("second-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+    // You can add form validation here if needed
+    window.location.href = "index.html"; // Redirect to homepage after form submission
+    alert("Thanks for the details! One of our representatives will reach out to you shortly. In the meanwhile, explore our website."); // Display confirmation message
+});
+    </script>
+
+    </body>
 </html>
