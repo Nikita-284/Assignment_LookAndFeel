@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign up</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body>
+    <div class="top">
+        <div class="bar white card" id="myNavbar">
+            <a href="index.html" class="bar-item button wide">FIT.CO</a>
+            <!-- Right-sided navbar links -->
+            <div class="right hide-small">
+                <a href="index.html" class="bar-item button">HOME</a>
+                <a href="myfit.html" class="bar-item button"><i class="fa fa-th"></i> MyFIT</a>
+                <a href="signup.html" class="bar-item button"> SIGN UP</a>
+                <a href="aboutus.html" class="bar-item button"> ABOUT US</a>
+                <a href="#contact" class="bar-item button"><i class="fa fa-envelope"></i> CONTACT</a>
+            </div>
+            <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+            <a href="javascript:void(0)" class="bar-item button right hide-large hide-medium" onclick="w3_open()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+    <!-- Sidebar on small screens when clicking the menu icon -->
+    <nav class="sidebar bar-block black card animate-left hide-medium hide-large" style="display:none" id="mySidebar">
+        <a href="javascript:void(0)" onclick="w3_close()" class="bar-item button large padding-16">Close ×</a>
+        <a href="index.html" onclick="w3_close()" class="bar-item button">HOME</a>
+        <a href="myfit.html" onclick="w3_close()" class="bar-item button">MyFIT</a>
+        <a href="signup.html" onclick="w3_close()" class="bar-item button">SIGN UP</a>
+        <a href="aboutus.html" onclick="w3_close()" class="bar-item button">ABOUT US</a>
+        <a href="#contact" onclick="w3_close()" class="bar-item button">CONTACT</a>
+        
+    </nav>
+
+    <div class="container light-grey" style="padding:80px 80px" id="contact">
+        <h3 class="center">Sign Up here</h3>
+        
+        <div style="margin-top:10px">
+         
+            <br>
+            <div style="width:100%;">
+                <p><input class="input border" type="text" placeholder="Name" required name="Name"></p>
+                <p><input class="input border" type="text" placeholder="Email" required name="Email"></p>
+                
+                <p><input class="input border" type="text" placeholder="Mobile" required name="Mobile"></p>
+                <p><input class="input border" type="text" placeholder="Height" required name="Mobile"></p>
+                <p><input class="input border" type="text" placeholder="Weight" required name="Mobile"></p>
+                <p><input class="input border" type="text" placeholder="Age" required name="Mobile"></p>
+                <p>
+                    <button class="button black" onclick="showContact()">
+                        <i class="fa fa-paper-plane"></i> Sign Up
+                    </button>
+                </p>
+            </div>
+                <h4 id="ContactMsg" style="color: red;border: 1px red solid;display: none;padding:8px">Thankyou! Our team will contact you soon.</h4>
+                
+            
+
+        </div>
+    </div>
+     <!-- Footer -->
+     <footer class="center black padding-64">
+        <a href="#top" class="button light-grey"><i class="fa fa-arrow-up margin-right"></i>To the top</a>
+        <div class="xlarge section" style="padding: 20px;">
+            <i class="fa fa-facebook-official hover-opacity"></i>
+            <i class="fa fa-instagram hover-opacity"></i>
+            <i class="fa fa-snapchat hover-opacity"></i>
+            <i class="fa fa-pinterest-p hover-opacity"></i>
+            <i class="fa fa-twitter hover-opacity"></i>
+            <i class="fa fa-linkedin hover-opacity"></i>
+        </div>
+        <p>Copyright 2024. Fit.co</p>
+    </footer>
+</body>
+
+</html>
