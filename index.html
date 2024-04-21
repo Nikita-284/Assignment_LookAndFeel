@@ -392,7 +392,7 @@ body, html {
 
 
     <!-- Contact Section -->
-    <div class="container light-grey" style="padding:80px 100px" id="contact">
+    <div class="container light-grey" style="padding:80px 80px" id="contact">
         <h3 class="center">CONTACT</h3>
         <p class="center large">Lets get in touch. Send us a message:</p>
         <div style="margin-top:48px">
@@ -406,11 +406,11 @@ body, html {
                 <p><input class="input border" type="text" placeholder="Subject" required name="Subject"></p>
                 <p><input class="input border" type="text" placeholder="Message" required name="Message"></p>
                 <p>
-                    <button class="button black" onclick="">
+                    <button class="button black" onclick="showContact()">
                         <i class="fa fa-paper-plane"></i> SEND MESSAGE
                     </button>
                 </p>
-                <h4 style="color: red;border: 1px red solid;display: none;padding:8px">Thankyou! Our team will contact you soon.</h4>
+                <h4 id="ContactMsg" style="color: red;border: 1px red solid;display: none;padding:8px">Thankyou! Our team will contact you soon.</h4>
                 
             </form>
 
@@ -467,6 +467,11 @@ body, html {
         {
             document.getElementById('review').style.display = 'block';
         }
+        function showContact()
+        {
+            document.getElementById('ContactMsg').style.display = 'inline';
+        }
+
     </script>
 </body>
 </html>
