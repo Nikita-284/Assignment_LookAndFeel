@@ -563,7 +563,7 @@
         }
 
         .meal {
-            background-color: #FDEBD0; /* Light blue background */
+            background-color: #F8F9F9; /* Light blue background */
             border-radius: 10px;
             padding: 10px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -852,15 +852,13 @@
                 </div>
                 <div id="dinnerCalorieStatus" class="calories-output"></div>
             </div>
-            <div class="hydration-card-content">
-                <div class="hydration-heading">
-                    <div class="heading-text">Hydration</div>
+            <div class="meal">
+                <div class="meal-heading">Hydration</div>
+                <div class="meal-input-container">
+                    <input type="number" id="waterAmount" class="meal-input" placeholder="Enter">
+                    <button onclick="logWaterIntake()" class="meal-button">Log</button>
                 </div>
-                <div class="hydration-input-container">
-                    <input type="number" id="waterAmount" class="hydration-input" placeholder="Enter">
-                    <button onclick="logWaterIntake()" class="hydration-button">Log</button>
-                </div>
-                <div id="hydrationResult" class="hydration-result"></div>
+                <div id="hydrationResult" class="calories-output"></div>
             </div>
 
         </div>
