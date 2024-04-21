@@ -53,14 +53,17 @@
             align-items: center;
             background-color: #EAECEB;
             margin-bottom: 10%;
+
+            width: 90%;
             cursor: pointer;
             transition: background-color 0.3s ease;
             border-radius: 5px;
-            padding: 10px;
+            padding: 8px;
         }
 
             .sidebar-option:hover {
-                background-color: #7CF2DB; /* Dark background on hover */
+                background-color: #AED6F1; /* Dark background on hover */
+                width: 90%;
             }
 
         .option-logo {
@@ -71,6 +74,7 @@
         .option-text {
             font-size: 1rem;
             color: #000;
+
         }
 
         .content {
@@ -103,42 +107,46 @@
             white-space: nowrap; /* Prevent text from wrapping */
             text-overflow: ellipsis; /* Show ellipsis (...) for overflow text */
             color: #000;
+            margin-bottom: 2%;
         }
 
         .user-photo {
-            width: 100%;
+            width: 250%;
             height: 80%;
             border-radius: 50%;
             object-fit: cover;
             margin-right: 20%;
-            margin-right: 30%;
+            margin-bottom: 2%;
         }
 
         .card {
             background-color: #F8F9F9;
             width: 90%;
-            padding: 5px;
+            padding: 3px;
             border-radius: 10px;
-            margin-top: 10%;
+            margin-top: 5%;
+            margin-bottom: 4%;
         }
 
         .card-heading {
             font-size: 0.9rem;
+            text-align: center;
             font-weight: bold;
-            margin-bottom: 7%;
+            margin-bottom: 2%;
             color: #000;
         }
 
         .logo-and-text {
             display: flex;
             align-items: center;
+            margin-bottom: 0%;
         }
 
 
         .card-logo {
             width: 15%;
-            height: 15%;
-            margin-right: 20%;
+            height: 10%;
+            margin-right: 6%;
         }
 
         .card-text {
@@ -159,11 +167,13 @@
             font-weight: bold;
             margin-bottom: 5%;
             color: #000;
+            margin-left: 1%;
         }
 
         .card-details {
             font-size: 0.8rem;
             color: #555;
+            margin-left: 1%;
         }
 
         .card-container {
@@ -681,28 +691,34 @@
                 background-color: #d32f2f;
             }
 
+        .sidebar-option.active {
+            /* Style for the active button */
+            background-color: #D6EAF8;
+            color: white;
+        }
 
+           
 
     </style>
 </head>
 <body>
     <div class="left-sidebar">
         <div class="sidebar-heading">MyFit</div>
-        <div class="sidebar-option">
+        <div class="sidebar-option" id="dashboardButton">
             <img src="img/dashboard_logo.jpeg" alt="Dashboard Logo" class="option-logo">
             <a href="myfit.html" class="option-text">Dashboard</a>
         </div>
         <div class="sidebar-option">
+            <img src="img/diet_logo.png" alt="Reports Logo" class="option-logo">
+            <a href="recipes.html" class="option-text">Recipes</a>
+        </div>
+        <div class="sidebar-option">
+            <img src="img/yoga_logo.jpeg" alt="Yoga Logo" class="option-logo">
+            <a href="yoga.html" class="option-text" id="yogaButton">Yoga</a>
+        </div>
+        <div class="sidebar-option">
             <img src="img/workout_logo.jpeg" alt="Reports Logo" class="option-logo">
             <span class="option-text">Workout</span>
-        </div>
-        <div class="sidebar-option">
-            <img src="img/diet_logo.jpeg" alt="Reports Logo" class="option-logo">
-            <span class="option-text">Recipes</span>
-        </div>
-        <div class="sidebar-option">
-            <img src="img/yoga_logo.jpeg" alt="Reports Logo" class="option-logo">
-            <span class="option-text">Yoga</span>
         </div>
         <div class="sidebar-option">
             <img src="img/schedule_logo.jpeg" alt="Reports Logo" class="option-logo">
@@ -710,7 +726,7 @@
         </div>
         <div class="sidebar-option">
             <img src="img/profile_logo.jpeg" alt="Analytics Logo" class="option-logo">
-            <span class="option-text">Profile</span>
+            <a href="profile.html" class="option-text">Profile</a>
         </div>
     </div>
     <div class="content">
@@ -722,7 +738,7 @@
             <div class="calories-card">
                 <div class="calories-card-content">
                     <div class="calories-heading">
-                        <img src="img/hydration_logo.jpeg" alt="Hydration Logo" style="width: 15%; margin-right: 5%;">
+                        <img src="img/hydration_logo.jpeg" alt="Hydration Logo" style="width: 20%; margin-right: 5%;">
                         <div class="heading-text">Hydration</div>
                     </div>
                     <div>
@@ -743,7 +759,7 @@
             <div class="calories-card">
                 <div class="calories-card-content">
                     <div class="calories-heading">
-                        <img src="img/calories_logo.jpeg" alt="Calories Logo" style="width: 15%; margin-right: 5%;">
+                        <img src="img/calories_logo.jpeg" alt="Calories Logo" style="width: 20%; margin-right: 5%;">
                         <div class="heading-text">Calories</div>
                     </div>
                     <div>
@@ -763,7 +779,7 @@
             <div class="calories-card">
                 <div class="calories-card-content">
                     <div class="calories-heading">
-                        <img src="img/health_metrics.jpeg" alt="Calories Logo" style="width: 15%; margin-right: 5%;">
+                        <img src="img/health_metrics.jpeg" alt="Calories Logo" style="width: 20%; margin-right: 5%;">
                         <div class="heading-text">Health Metrics</div>
                     </div>
                     <div>
@@ -783,7 +799,7 @@
             <div class="calories-card">
                 <div class="calories-card-content">
                     <div class="calories-heading">
-                        <img src="img/activity_logo.png" alt="activities Logo" style="width: 15%; margin-right: 5%;">
+                        <img src="img/activity_logo.png" alt="activities Logo" style="width: 20%; margin-right: 5%;">
                         <div class="heading-text">Activity</div>
                     </div>
                     <div>
@@ -816,7 +832,7 @@
             </div>
         </div>
 
-        <div style="margin-top: 1%; margin-bottom: 3%; width: 270px; background-color: #FADBD8; color: #000; margin: 0 auto; text-align: center; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); letter-spacing: 1px; margin-top: 1%;">
+        <div style="margin-top: 1%; margin-bottom: 3%; width: 270px; background-color: #D6DBDF; color: #000; margin: 0 auto; text-align: center; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); letter-spacing: 1px; margin-top: 1%;">
             <h2 style="margin: 0; font-size: 1.2rem; font-weight: bold;">Log your Intakes</h2>
         </div>
 
@@ -864,45 +880,12 @@
 
         </div>
 
-        <div style="margin-top: 1%; margin-bottom: 1%; width: 350px; background-color: #FADBD8; color: #000; margin: 0 auto; text-align: center; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); letter-spacing: 1px; margin-top: 1%;">
+        <div style="margin-top: 1%; margin-bottom: 1%; width: 350px; background-color: #D6DBDF; color: #000; margin: 0 auto; text-align: center; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); letter-spacing: 1px; margin-top: 1%; ">
             <h2 style="margin: 0; font-size: 1.2rem; font-weight: bold;">Healthy Meal Plan for Today</h2>
         </div>
 
         <div class="cards-container">
 
-            <div class="recipe-card">
-                <div class="recipe-card-inner">
-                    <div class="recipe-card-front">
-                        <img src="img/salad_recipe.jpeg" alt="Salad Recipe" class="recipe-image">
-
-                        <div class="recipe-labels-container">
-                            <div class="recipe-label-item" style="font-size: 1rem; color: #333; background-color: #F9EBEA; border-radius: 5px; padding: 5px 5px; margin: 8px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); text-transform: uppercase; font-weight: bold; ">Dinner</div>
-
-
-                        </div>
-                    </div>
-                    <div class="recipe-card-back">
-                        <div class="recipe-title">Salad</div>
-                        <div class="shopping-list">
-                            <div class="shopping-list-item" style="font-size: 1rem;">Mixed greens</div>
-                            <div class="shopping-list-item" style="font-size: 1rem;">Tomatoes</div>
-                            <div class="shopping-list-item" style="font-size: 1rem;">Cucumber</div>
-                            <div class="shopping-list-item" style="font-size: 1rem;">Avocado</div>
-                            <div class="shopping-list-item" style="font-size: 1rem;">Feta cheese</div>
-                            <div class="shopping-list-item" style="font-size: 1rem;">Olive oil</div>
-                        </div>
-                        <div class="recipe-video">
-                            <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank">
-                                <img src="img/youtube_logo.png" alt="YouTube Logo" style="width: 40%; margin-right: 0%;margin-left:30%">
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Add more recipe cards here with similar structure -->
-            <!-- Example card -->
             <div class="recipe-card">
                 <div class="recipe-card-inner">
                     <div class="recipe-card-front">
@@ -922,6 +905,37 @@
                             <div class="shopping-list-item" style="font-size: 1rem;">Peanut butter </div>
                             <div class="shopping-list-item" style="font-size: 1rem;">Cinnamon</div>
                             <div class="shopping-list-item" style="font-size: 1rem;">Chocolate Chips</div>
+
+
+                        </div>
+                        <div class="recipe-video">
+                            <a href="https://www.youtube.com/watch?v=VZOHHCosuzY" target="_blank">
+                                <img src="img/youtube_logo.png" alt="YouTube Logo" style="width: 40%; margin-right: 0%;margin-left:30%">
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <div class="recipe-card-inner">
+                    <div class="recipe-card-front">
+                        <img src="img/avocado_recipe.jpeg" alt="Avocado Recipe" class="recipe-image">
+
+                        <div class="recipe-labels-container">
+                            <div class="recipe-label-item" style="font-size: 1rem; color: #333; background-color: #F9EBEA; border-radius: 5px; padding: 5px 5px; margin: 8px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); text-transform: uppercase; font-weight: bold; ">Lunch</div>
+                        </div>
+                    </div>
+                    <div class="recipe-card-back">
+                        <div class="recipe-title">Avocado Toast</div>
+                        <div class="shopping-list">
+                            <div class="shopping-list-item" style="font-size: 1rem;">Avocados</div>
+                            <div class="shopping-list-item" style="font-size:1rem;">Bread </div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Red onion</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Fresh cilantro</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Lime</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Feta cheese</div>
 
 
                         </div>
@@ -964,27 +978,26 @@
                 </div>
             </div>
 
-
             <div class="recipe-card">
                 <div class="recipe-card-inner">
                     <div class="recipe-card-front">
-                        <img src="img/avocado_recipe.jpeg" alt="Avocado Recipe" class="recipe-image">
+                        <img src="img/salad_recipe.jpeg" alt="Salad Recipe" class="recipe-image">
 
                         <div class="recipe-labels-container">
-                            <div class="recipe-label-item" style="font-size: 1rem; color: #333; background-color: #F9EBEA; border-radius: 5px; padding: 5px 5px; margin: 8px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); text-transform: uppercase; font-weight: bold; ">Lunch</div>
+                            <div class="recipe-label-item" style="font-size: 1rem; color: #333; background-color: #F9EBEA; border-radius: 5px; padding: 5px 5px; margin: 8px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); text-transform: uppercase; font-weight: bold; ">Dinner</div>
+
+
                         </div>
                     </div>
                     <div class="recipe-card-back">
-                        <div class="recipe-title">Avocado Toast</div>
+                        <div class="recipe-title">Salad</div>
                         <div class="shopping-list">
-                            <div class="shopping-list-item" style="font-size: 1rem;">Avocados</div>
-                            <div class="shopping-list-item" style="font-size:1rem;">Bread </div>
-                            <div class="shopping-list-item" style="font-size: 1rem;">Red onion</div>
-                            <div class="shopping-list-item" style="font-size: 1rem;">Fresh cilantro</div>
-                            <div class="shopping-list-item" style="font-size: 1rem;">Lime</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Mixed greens</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Tomatoes</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Cucumber</div>
+                            <div class="shopping-list-item" style="font-size: 1rem;">Avocado</div>
                             <div class="shopping-list-item" style="font-size: 1rem;">Feta cheese</div>
-
-
+                            <div class="shopping-list-item" style="font-size: 1rem;">Olive oil</div>
                         </div>
                         <div class="recipe-video">
                             <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank">
@@ -996,9 +1009,10 @@
                 </div>
             </div>
 
+
         </div>
 
-        <div style="margin-top: 1%; margin-bottom: 1%; width: 300px; background-color: #FADBD8; color: #000; margin: 0 auto; text-align: center; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); letter-spacing: 1px; margin-top: 1%;">
+        <div style="margin-top: 1%; margin-bottom: 1%; width: 300px; background-color: #D6DBDF; color: #000; margin: 0 auto; text-align: center; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); letter-spacing: 1px; margin-top: 1%; ">
             <h2 style="margin: 0; font-size: 1.2rem; font-weight: bold;">Your Intake history</h2>
         </div>
 
@@ -1047,11 +1061,11 @@
         <div class="right-sidebar">
             <div class="user-profile">
                 <img src="img/user_photo.jpeg" alt="User Photo" class="user-photo">
-                <div class="user-name">Hi! Jiva Taylor</div>
+                <div class="user-name"> Hi! Jiva Taylor</div>
             </div>
             <div class="card">
-                <div class="card-info">56&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;28</div>
-                <div class="card-details">Weight &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Height &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Age</div>
+                <div class="card-info">56&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;28</div>
+                <div class="card-details">Weight &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Height &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Age</div>
             </div>
             <div class="my-schedule-heading">My Schedule</div>
 
@@ -1420,6 +1434,20 @@
                     }
                 }
             });
+
+            // Get the current page URL
+            const currentPageUrl = window.location.href;
+
+            // Get the dashboard button element
+            const dashboardButton = document.getElementById('dashboardButton');
+
+           
+            // Check if the current page URL contains 'myfit.html'
+            if (currentPageUrl.includes('myfit.html')) {
+                // Add 'active' class to dashboard button
+                dashboardButton.classList.add('active');
+            } 
+
 
         </script>
 </body>
