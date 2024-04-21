@@ -3,83 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explore Healthy Recipes</title>
+    <title>Discover Nutritious Recipes</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            padding: 2%;
-            background-color: #f3f3f3;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f7f7f7;
         }
 
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1%;
-            margin-top: 2%;
+        .container {
+            max-width: 1000px;
+            width: 70%;
         }
 
-        .card {
-            width: 20%; 
-            padding: 1%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #ffffff;
+        .heading {
             text-align: center;
-            position: relative;
-            cursor: pointer;
-            transition: transform 0.3s ease;
+            margin-bottom: 30px;
         }
 
-            .card:hover {
-                transform: translateY(-5px);
-            }
-
-            .card img {
-                width: 100%;
-                height: 60%;
-                padding: 1%;
-                margin-bottom: 2%;
-                border-radius: 10px;
-                object-fit: cover;
-            }
-
-            .card h2 {
-                margin-top: 0%;
-                font-size: 1.5rem;
-                margin-bottom: 0%;
-                color: #333333;
-                text-transform: capitalize;
-            }
-
-        header {
-            text-align: center;
-            margin-bottom: 2%;
-        }
-
-            header h1 {
+            .heading h1 {
                 font-size: 2.5rem;
                 color: #333333;
                 text-transform: uppercase;
                 letter-spacing: 2px;
                 margin-bottom: 10px;
             }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 0%;
+            margin-top: 2%;
+        }
+
+        .card {
+            width: 25%;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            text-align: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+            margin-bottom: 3%;
+            margin-right: 1%;
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 10px 10px 0 0;
+            }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333333;
+            text-transform: capitalize;
+        }
+
+        .card p {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: #666666;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Discover Nutritious Recipes</h1>
-    </header>
-
-    <div class="card-container">
-        <div class="card">
-            <img src="img/recipe1.jpeg" alt="Healthy Salad">
-            <h2>Healthy Salad</h2>
+    <div class="container">
+        <div class="heading">
+            <h1>Discover Nutritious Recipes</h1>
         </div>
 
+        <div class="card-container">
+            <div class="card">
+                <img src="img/recipe1.jpeg" alt="Healthy Salad">
+                <div class="card-content">
+                    <h2>Healthy Salad</h2>
+                    <p>Explore a variety of fresh salads packed with nutrients.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/recipe2.jpeg" alt="Spaghetti">
+                <div class="card-content">
+                    <h2>Spaghetti</h2>
+                    <p>Explore a variety of delicious spaghetti recipes for a satisfying meal.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/recipe3.jpeg" alt="Grilled Chicken">
+                <div class="card-content">
+                    <h2>Grilled Chicken</h2>
+                    <p>Learn how to grill juicy and flavorful chicken for your meals.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/recipe4.jpeg" alt="Quinoa Salad">
+                <div class="card-content">
+                    <h2>Cornbread</h2>
+                    <p>Discover a delicious combination of cornbread, fresh lettuce for a delightful meal.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/recipe5.jpeg" alt="Smoothie Bowl">
+                <div class="card-content">
+                    <h2>Rice Bowl</h2>
+                    <p>Enjoy a flavorful bowl with a combination of rice and fresh vegetables.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/recipe6.jpeg" alt="Stuffed Bell Peppers">
+                <div class="card-content">
+                    <h2>Chickpea Bliss</h2>
+                    <p>Enjoy nutritious blend of chickpeas, beetroot greens, and paneer .</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/recipe7.jpeg" alt="Chia Seed Pudding">
+                <div class="card-content">
+                    <h2>Mashed Potato</h2>
+                    <p>Indulge in a comforting dish with tender chicken and mashed potatoes.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/recipe8.jpeg" alt="Mediterranean Salad">
+                <div class="card-content">
+                    <h2>Tofu Sandwich</h2>
+                    <p>Enjoy a crunchy sandwich with tofu slices, fresh veggies.</p>
+                </div>
+            </div>
+
+        </div>
     </div>
 
 </body>
