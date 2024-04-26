@@ -49,22 +49,22 @@
          
             <br>
             <div style="width:100%;">
-                <p><input class="input border" type="text" placeholder="Name" required name="Name" value="Alex J" ></p>
-                <p><input class="input border" type="text" placeholder="Email" required name="Email" value="alexj@gmail.com"></p>
+                <p><input class="input border" type="text" placeholder="Name" required id="name"></p>
+                <p><input class="input border" type="text" placeholder="Email" required id="email"></p>
                 
-                <p><input class="input border" type="text" placeholder="Mobile" required name="Mobile" value="+16562179258"></p>
-                <p><input class="input border" type="text" placeholder="Height (in cm)" required name="Mobile" value="168"></p>
-                <p><input class="input border" type="text" placeholder="Weight (in kg)" required name="Mobile" value="68"></p>
-                <p><input class="input border" type="text" placeholder="Age" required name="Mobile" value="27"></p>
+                <p><input class="input border" type="text" placeholder="Mobile" required id="mobile"></p>
+                <p><input class="input border" type="text" placeholder="Height (in cm)" required id="height"></p>
+                <p><input class="input border" type="text" placeholder="Weight (in kg)" required id="weight"></p>
+                <p><input class="input border" type="text" placeholder="Age" required id="age"></p>
                 <p>Choose your plan: <select name="plans" id="plans">
-                    <option value="volvo">Basic Plan</option>
-                    <option value="saab">Pro Plan</option>
-                    <option value="opel">Ultimate Plan</option>
+                    <option value="Basic Plan">Basic Plan</option>
+                    <option value="Pro Plan">Pro Plan</option>
+                    <option value="Ultimate Plan">Ultimate Plan</option>
                   </select></p>
                 <p>
 
                 <p>
-                    <button class="button black" onclick="alert('Profile Updated!')">
+                    <button class="button black" onclick="updateP()">
                         <i class="fa fa-paper-plane"></i> Update
                     </button>
                 </p>
@@ -87,7 +87,31 @@
         </div>
         <p>Copyright 2024. Fit.co</p>
     </footer>
+    <script>
+        var x = JSON.parse(localStorage.getItem('person'));
+        console.log(x);
+        document.getElementById('name').value = x[0];
+        document.getElementById('email').value = x[1];
+        document.getElementById('mobile').value = x[2];
+        document.getElementById('height').value = x[3];
+        document.getElementById('weight').value = x[4]
+        document.getElementById('age').value = x[5];
+        document.getElementById('plans').value = x[6];
+
+        function updateP()
+        {
+            localStorage.setItem('person', JSON.stringify([]));
+            var x = [document.getElementById('name').value, document.getElementById('email').value, document.getElementById('mobile').value, document.getElementById('height').value, document.getElementById('weight').value, document.getElementById('age').value, document.getElementById('plans').value];
+            console.log(x);
+            localStorage.setItem('person', JSON.stringify(x));
+            console.log("saved");
+            alert('Update Succesful!');
+            window.location.href = 'myfit.html';
+        }
+
+    </script>
     <script src="js/main.js"></script>
+    
 </body>
 
 </html>

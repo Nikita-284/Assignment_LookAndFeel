@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyFit Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/init.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -842,39 +843,39 @@
                 <div class="meal-heading">Breakfast</div>
                 <div class="meal-input-container">
                     <input type="number" id="breakfastCalories" class="meal-input" placeholder="Enter">
-                    <button onclick="logMeal('breakfast')" class="meal-button">Log</button>
+                    <button onclick="logMealBreakfast('Breakfast')" class="meal-button">Log</button>
                 </div>
                 <div id="breakfastCalorieStatus" class="calories-output"></div>
             </div>
             <div class="meal">
                 <div class="meal-heading">Lunch</div>
                 <div class="meal-input-container">
-                    <input type="number" id="lunchCalories" class="meal-input" placeholder="Enter">
-                    <button onclick="logMeal('lunch')" class="meal-button">Log</button>
+                    <input type="number" id="lunchc" class="meal-input" placeholder="Enter">
+                    <button onclick="logmeallunch()" class="meal-button">Log</button>
                 </div>
                 <div id="lunchCalorieStatus" class="calories-output"></div>
             </div>
             <div class="meal">
                 <div class="meal-heading">Snack</div>
                 <div class="meal-input-container">
-                    <input type="number" id="snackCalories" class="meal-input" placeholder="Enter">
-                    <button onclick="logMeal('snack')" class="meal-button">Log</button>
+                    <input type="number" id="snackc" class="meal-input" placeholder="Enter">
+                    <button onclick="logmealsnack()" class="meal-button">Log</button>
                 </div>
                 <div id="snackCalorieStatus" class="calories-output"></div>
             </div>
             <div class="meal">
                 <div class="meal-heading">Dinner</div>
                 <div class="meal-input-container">
-                    <input type="number" id="dinnerCalories" class="meal-input" placeholder="Enter">
-                    <button onclick="logMeal('dinner')" class="meal-button">Log</button>
+                    <input type="number" id="dinnerc" class="meal-input" placeholder="Enter">
+                    <button onclick="logmealdinner()" class="meal-button">Log</button>
                 </div>
                 <div id="dinnerCalorieStatus" class="calories-output"></div>
             </div>
             <div class="meal">
                 <div class="meal-heading">Hydration</div>
                 <div class="meal-input-container">
-                    <input type="number" id="waterAmount" class="meal-input" placeholder="Enter">
-                    <button onclick="logWaterIntake()" class="meal-button">Log</button>
+                    <input type="number" id="hydc" class="meal-input" placeholder="Enter">
+                    <button onclick="logmealhydration()" class="meal-button">Log</button>
                 </div>
                 <div id="hydrationResult" class="calories-output"></div>
             </div>
@@ -1027,31 +1028,14 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="logtable">
                     <tr>
                         <td>Breakfast</td>
                         <td>500 Calories</td>
                         <td>2024-04-15 08:00 AM</td>
                         <td><button class="delete-button">Delete</button></td>
                     </tr>
-                    <tr>
-                        <td>Lunch</td>
-                        <td>1100 Calories</td>
-                        <td>2024-04-15 2:00 PM</td>
-                        <td><button class="delete-button">Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>Dinner</td>
-                        <td>700 Calories</td>
-                        <td>2024-04-15 08:00 PM</td>
-                        <td><button class="delete-button">Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>Hydration</td>
-                        <td>4</td>
-                        <td>2024-04-15 09:00 PM</td>
-                        <td><button class="delete-button">Delete</button></td>
-                    </tr>
+                    
                     <!-- Add more rows here -->
                 </tbody>
             </table>
@@ -1138,35 +1122,14 @@
                 hydrationResultElement.textContent = message;
             }
 
-            function logMeal(meal) {
-                let calories;
-                let maxCalories;
+            
+            function logMealBreakfast(meal){
 
-                switch (meal) {
-                    case 'breakfast':
-                        calories = parseFloat(document.getElementById('breakfastCalories').value);
-                        maxCalories = 500;
-                        break;
-                    case 'lunch':
-                        calories = parseFloat(document.getElementById('lunchCalories').value);
-                        maxCalories = 1200;
-                        break;
-                    case 'snack':
-                        calories = parseFloat(document.getElementById('snackCalories').value);
-                        maxCalories = 300;
-                        break;
-                    case 'dinner':
-                        calories = parseFloat(document.getElementById('dinnerCalories').value);
-                        maxCalories = 800;
-                        break;
-                }
-
-                if (isNaN(calories) || calories < 0) {
-                    alert('Please enter a valid calorie value');
-                    return;
-                }
-
-                const percentage = (calories / maxCalories) * 100;
+           
+            var x = document.getElementById('breakfastCalories').value;
+            if(x<0)
+            {    alert('Please enter a valid calorie value');}
+            const percentage = (x / 500) * 100;
 
                 let message;
                 if (percentage < 70) {
@@ -1178,9 +1141,190 @@
                 }
 
                 // Update the message element for the specific meal
-                document.getElementById(`${meal}CalorieStatus`).textContent = message;
+                document.getElementById('breakfastCalorieStatus').textContent = message;
+            var cont = document.getElementById('logtable').innerHTML;
+            var currentDate = new Date();
+            
+            // Get the current date and time components
+            var year = currentDate.getFullYear();
+            var month = currentDate.getMonth() + 1; // Months are zero-indexed, so we add 1
+            var day = currentDate.getDate();
+            var hours = currentDate.getHours();
+            var minutes = currentDate.getMinutes();
+            var seconds = currentDate.getSeconds();
+            var iid = "b" + bid;
+            console.log(iid);
+            // Format the date and time as needed
+            var formattedDateTime = year + "-" + month + "-" + day + " " + hours + ":" + minutes;
+                cont = cont + `<tr id='${iid}'>
+                <td>Breakfast</td>
+                <td>${x}</td>
+                <td>${formattedDateTime}</td>
+                <td><button class="delete-button" onclick='del(${bid},"b")'>Delete</button></td>
+            </tr>`;
+            document.getElementById('logtable').innerHTML = cont;
+            bid = bid + 1;
             }
 
+            function del(iid, i)
+            {
+                console.log(iid);
+                var x = i + iid;
+                //console.log(document.getElementById(iid).innerHTML);
+                document.getElementById(x).innerHTML = '';
+                
+            }
+
+
+
+            function logmeallunch(){
+            var x = document.getElementById('lunchc').value;
+            if(x<0)
+            {    alert('Please enter a valid calorie value');}
+            const percentage = (x / 1200) * 100;
+
+                let message;
+                if (percentage < 70) {
+                    message = 'You are calorie-deficit';
+                } else if (percentage > 100) {
+                    message = 'You had a high-calorie diet';
+                } else {
+                    message = 'Your calorie intake is within the recommended range';
+                }
+
+                // Update the message element for the specific meal
+                document.getElementById('lunchCalorieStatus').textContent = message;
+            var cont = document.getElementById('logtable').innerHTML;
+            var currentDate = new Date();
+
+            // Get the current date and time components
+            var year = currentDate.getFullYear();
+            var month = currentDate.getMonth() + 1; // Months are zero-indexed, so we add 1
+            var day = currentDate.getDate();
+            var hours = currentDate.getHours();
+            var minutes = currentDate.getMinutes();
+            var seconds = currentDate.getSeconds();
+            var iid = "l" + lid;
+            console.log(iid);
+            // Format the date and time as needed
+            var formattedDateTime = year + "-" + month + "-" + day + " " + hours + ":" + minutes;
+                cont = cont + `<tr id='${iid}'>
+                <td>Lunch</td>
+                <td>${x}</td>
+                <td>${formattedDateTime}</td>
+                <td><button class="delete-button" onclick='del(${lid},"l")'>Delete</button></td>
+            </tr>`;
+            document.getElementById('logtable').innerHTML = cont;
+            lid = lid + 1;
+            }
+
+            function logmealsnack(){
+            var x = document.getElementById('snackc').value;
+            if(x<0)
+            {    alert('Please enter a valid calorie value');}
+            const percentage = (x / 300) * 100;
+
+                let message;
+                if (percentage < 70) {
+                    message = 'You are calorie-deficit';
+                } else if (percentage > 100) {
+                    message = 'You had a high-calorie diet';
+                } else {
+                    message = 'Your calorie intake is within the recommended range';
+                }
+
+                // Update the message element for the specific meal
+                document.getElementById('snackCalorieStatus').textContent = message;
+            var cont = document.getElementById('logtable').innerHTML;
+            var currentDate = new Date();
+
+            // Get the current date and time components
+            var year = currentDate.getFullYear();
+            var month = currentDate.getMonth() + 1; // Months are zero-indexed, so we add 1
+            var day = currentDate.getDate();
+            var hours = currentDate.getHours();
+            var minutes = currentDate.getMinutes();
+            var seconds = currentDate.getSeconds();
+            var iid = "s" + sid;
+            console.log(iid);
+            // Format the date and time as needed
+            var formattedDateTime = year + "-" + month + "-" + day + " " + hours + ":" + minutes;
+                cont = cont + `<tr id='${iid}'>
+                <td>Snacks</td>
+                <td>${x}</td>
+                <td>${formattedDateTime}</td>
+                <td><button class="delete-button" onclick='del(${sid},"s")'>Delete</button></td>
+            </tr>`;
+            document.getElementById('logtable').innerHTML = cont;
+            sid = sid + 1;
+            }
+
+            function logmealdinner(){
+            var x = document.getElementById('dinnerc').value;
+            if(x<0)
+            {    alert('Please enter a valid calorie value');}
+            const percentage = (x / 800) * 100;
+
+                let message;
+                if (percentage < 70) {
+                    message = 'You are calorie-deficit';
+                } else if (percentage > 100) {
+                    message = 'You had a high-calorie diet';
+                } else {
+                    message = 'Your calorie intake is within the recommended range';
+                }
+
+                // Update the message element for the specific meal
+                document.getElementById('dinnerCalorieStatus').textContent = message;
+            var cont = document.getElementById('logtable').innerHTML;
+            var currentDate = new Date();
+
+            // Get the current date and time components
+            var year = currentDate.getFullYear();
+            var month = currentDate.getMonth() + 1; // Months are zero-indexed, so we add 1
+            var day = currentDate.getDate();
+            var hours = currentDate.getHours();
+            var minutes = currentDate.getMinutes();
+            var seconds = currentDate.getSeconds();
+            var iid = "d" + did;
+            console.log(iid);
+            // Format the date and time as needed
+            var formattedDateTime = year + "-" + month + "-" + day + " " + hours + ":" + minutes;
+                cont = cont + `<tr id='${iid}'>
+                <td>Dinner</td>
+                <td>${x}</td>
+                <td>${formattedDateTime}</td>
+                <td><button class="delete-button" onclick='del(${did},"d")'>Delete</button></td>
+            </tr>`;
+            document.getElementById('logtable').innerHTML = cont;
+            did = did + 1;
+            }
+
+            function logmealhydration(){
+            var x = document.getElementById('hydc').value;
+            var cont = document.getElementById('logtable').innerHTML;
+            var currentDate = new Date();
+
+            // Get the current date and time components
+            var year = currentDate.getFullYear();
+            var month = currentDate.getMonth() + 1; // Months are zero-indexed, so we add 1
+            var day = currentDate.getDate();
+            var hours = currentDate.getHours();
+            var minutes = currentDate.getMinutes();
+            var seconds = currentDate.getSeconds();
+            var iid = "h" + hid;
+            console.log(iid);
+            // Format the date and time as needed
+            var formattedDateTime = year + "-" + month + "-" + day + " " + hours + ":" + minutes;
+                cont = cont + `<tr id='${iid}'>
+                <td>Hydration</td>
+                <td>${x}</td>
+                <td>${formattedDateTime}</td>
+                <td><button class="delete-button" onclick='del(${hid},"h")'>Delete</button></td>
+            </tr>`;
+            document.getElementById('logtable').innerHTML = cont;
+            hid = hid + 1;
+            }
 
 
 

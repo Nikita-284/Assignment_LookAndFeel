@@ -1,3 +1,4 @@
+var person = JSON.parse(localStorage.getItem('person')) || [];
 // Modal Image Gallery
 function onClick(element) {
     document.getElementById("img01").src = element.src;
